@@ -1,0 +1,4 @@
+%nav.nav.flex-column.side-nav
+	{% for child in page.children %}
+	%a{class: "border-bottom text-primary p-3 {% if child.fullpath == page.title %}active{% endif %}", href: "{% path_to child %}" } {{ child.title }}
+	{% endfor %}

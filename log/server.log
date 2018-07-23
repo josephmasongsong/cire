@@ -1,0 +1,51 @@
+# Logfile created on 2018-07-18 23:17:28 -0700 by logger.rb/61378
+I, [2018-07-18T23:17:28.996346 #29936]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-18T23:17:28.996473 #29936]  INFO -- : Maximum connections set to 1024
+I, [2018-07-18T23:17:28.996550 #29936]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-18T23:45:40.080858 #31634]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-18T23:45:40.081075 #31634]  INFO -- : Maximum connections set to 1024
+I, [2018-07-18T23:45:40.081126 #31634]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-18T23:47:07.074318 #31634]  INFO -- : Waiting for 1 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
+I, [2018-07-20T15:09:36.391105 #47854]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-20T15:09:36.391769 #47854]  INFO -- : Maximum connections set to 1024
+I, [2018-07-20T15:09:36.391911 #47854]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-20T15:14:35.846321 #48198]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-20T15:14:35.846408 #48198]  INFO -- : Maximum connections set to 1024
+I, [2018-07-20T15:14:35.846434 #48198]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-20T16:28:54.542405 #48826]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-20T16:28:54.542922 #48826]  INFO -- : Maximum connections set to 1024
+I, [2018-07-20T16:28:54.542981 #48826]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-20T17:55:34.010173 #905]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-20T17:55:34.010278 #905]  INFO -- : Maximum connections set to 1024
+I, [2018-07-20T17:55:34.010304 #905]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-20T19:50:29.554023 #1809]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-20T19:50:29.554118 #1809]  INFO -- : Maximum connections set to 1024
+I, [2018-07-20T19:50:29.554145 #1809]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T10:07:57.531268 #880]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T10:07:57.531364 #880]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T10:07:57.531390 #880]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T11:06:05.156317 #1301]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T11:06:05.156555 #1301]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T11:06:05.156602 #1301]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T12:03:12.070499 #1915]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T12:03:12.070579 #1915]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T12:03:12.070605 #1915]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T12:03:47.646990 #1915]  INFO -- : Waiting for 1 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
+I, [2018-07-21T12:03:50.491420 #1936]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T12:03:50.491502 #1936]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T12:03:50.491528 #1936]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T12:04:46.454309 #1950]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T12:04:46.454387 #1950]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T12:04:46.454412 #1950]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T12:08:02.993424 #2011]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T12:08:02.993509 #2011]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T12:08:02.993534 #2011]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-21T20:06:32.820838 #4740]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-21T20:06:32.820925 #4740]  INFO -- : Maximum connections set to 1024
+I, [2018-07-21T20:06:32.820950 #4740]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-22T11:19:52.331525 #887]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-22T11:19:52.331628 #887]  INFO -- : Maximum connections set to 1024
+I, [2018-07-22T11:19:52.331653 #887]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-07-22T14:40:20.866245 #2481]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-07-22T14:40:20.866335 #2481]  INFO -- : Maximum connections set to 1024
+I, [2018-07-22T14:40:20.866361 #2481]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop

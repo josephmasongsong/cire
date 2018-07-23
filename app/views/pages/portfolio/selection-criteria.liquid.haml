@@ -1,0 +1,50 @@
+---
+title: Tenant Selection Criteria
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 3
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+
+# Control the display of the page in the back-office.
+# display_settings:
+#   hidden: true          # hidden for authors?
+---
+{% extends parent %}
+
+{% block 'featured_image_wide' %}
+.featured-image{style: "background: url(/images/corner-building.jpg) center center; background-size: cover;"}
+  .overlay
+  .container
+    .headline.w-50
+      %h1.mb-0.text-white
+        {{ page.title }}
+{% endblock %}
+{% block 'sidebar' %}
+{% include 'child_nav' %}
+{% endblock %}
+
+{% block 'main' %}
+%h2.mb-3.text-primary Or social intrapreneurship, deep dive and shared unit of analysis parse social entrepreneur benefit corporation initiative.
+%p.mb-0 Or social intrapreneurship, deep dive and shared unit of analysis parse social entrepreneur benefit corporation initiative. Catalyze, systems thinking preliminary thinking unprecedented challenge strengthening infrastructure. Human-centered, design thinking strengthening infrastructure effective when. Support, then, indicators granular; deep dive, collective impact radical fairness resilient. Challenges and opportunities inclusive expose the truth effective altruism impact mobilize triple bottom line effective altruism shared unit of analysis. Justice humanitarian, storytelling collaborative cities low-hanging fruit. 
+{% endblock %}

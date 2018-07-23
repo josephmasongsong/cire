@@ -1,0 +1,29 @@
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 575.98px) { 
+	nav.navbar.fixed-top {
+		padding: 0 10px;
+	}
+	.page-header .page-header-caption, .credential-header .credential-header-caption {
+		left: 5%; right: 5%;
+	}
+	.featurette-container .lead, .micro-credential-content {
+		font-size: 1.125rem;
+	}
+	.featurette-container h1 {
+		font-size: 2.25rem
+	}
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 767.98px) { 
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (max-width: 991.98px) {
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1199.98px) { 
+}

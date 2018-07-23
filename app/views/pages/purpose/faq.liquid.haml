@@ -1,0 +1,92 @@
+---
+title: Frequently Asked Questions
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+# content_type: "<slug of one of the content types>"
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+
+# Control the display of the page in the back-office.
+# display_settings:
+#   hidden: true          # hidden for authors?
+---
+{% extends parent %}
+
+{% block 'featured_image_wide' %}
+.featured-image{style: "background: url(/images/condos.jpg) center center; background-size: cover;"}
+  .overlay
+  .container
+    .headline.w-50
+      %h1.mb-0.text-white
+        {{ page.title }}
+{% endblock %}
+{% block 'sidebar' %}
+{% include 'child_nav' %}
+{% endblock %}
+
+{% block 'main' %}
+/ %h2.mb-3.text-primary Parse social entrepreneur benefit corporation initiative.
+
+#accordionExample.accordion
+  .card.border-0
+    #headingOne.card-header.border-0.px-3.border-bottom
+      %p.mb-0
+        %a.collapsed.mb-0{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapseOne", "data-toggle" => "collapse", href: "#"}
+          What is impact real estate?
+    #collapseOne.collapse.show{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
+      .card-body.p-3
+        %p.mb-0 Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  .card.border-0
+    #headingTwo.card-header.border-0.border-bottom
+      %p.mb-0
+        %a.collapsed.mb-0{"aria-controls" => "collapseTwo", "aria-expanded" => "false", "data-target" => "#collapseTwo", "data-toggle" => "collapse", href: "#"}
+          Who are the Community Impact Real Estate Society?
+    #collapseTwo.collapse{"aria-labelledby" => "headingTwo", "data-parent" => "#accordionExample"}
+      .card-body.p-3
+        %p.mb-0 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid.
+  .card.border-0
+    #headingThree.card-header.border-0.border-bottom
+      %p.mb-0
+        %a.collapsed.mb-0{"aria-controls" => "collapseThree", "aria-expanded" => "false", "data-target" => "#collapseThree", "data-toggle" => "collapse", href: "#"}
+          Are you guys a part of government?
+    #collapseThree.collapse{"aria-labelledby" => "headingThree", "data-parent" => "#accordionExample"}
+      .card-body.p-3
+        %p.mb-0 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid.
+  .card.border-0
+    #headingFour.card-header.border-0.border-bottom
+      %p.mb-0
+        %a.collapsed.mb-0{"aria-controls" => "collapseFour", "aria-expanded" => "false", "data-target" => "#collapseFour", "data-toggle" => "collapse", href: "#"}
+          Is my business eligible to lease from CIRES?
+    #collapseFour.collapse{"aria-labelledby" => "headingThree", "data-parent" => "#accordionExample"}
+      .card-body.p-3
+        %p.mb-4 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. 
+        %p.mb-0 Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  .card.border-0
+    #headingFive.card-header.border-0.px-3
+      %p.mb-0
+        %a.collapsed.mb-0{"aria-controls" => "collapseFive", "aria-expanded" => "true", "data-target" => "#collapseFive", "data-toggle" => "collapse", href: "#"}
+          What are the terms of the lease?
+    #collapseFive.collapse{"aria-labelledby" => "headingOne", "data-parent" => "#accordionExample"}
+      .card-body.p-3
+        %p.mb-0 Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+{% endblock %}
