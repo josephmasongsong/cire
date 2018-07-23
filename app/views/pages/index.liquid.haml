@@ -9,63 +9,15 @@ handle: home
 .featured-image-large.bg-primary{style: "background: url(/images/neighbourhood.jpg) center center; background-size: cover;"}
   .overlay
   .container
-
     %h1.mb-0.text-white.text-uppercase.display-4.font-weight-bold 
       Healthy, Empowered
       %br
       Communities
 
-  / %nav.navbar.navbar-expand-sm.navbar-light.bg-transparent.p-0.main-nav.fixted-top
-  /   .container
-  /     %a.navbar-brand{href: "{% path_to home %}"}
-  /       %img{src: "{{ 'cire-logo-white-solid.png' | theme_image_url }}", style: "width: 255px;"}
-  /     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
-  /       %span.navbar-toggler-icon
-  /     .collapse.navbar-collapse
-  /       %nav.nav.ml-auto
-  /         / %a.text-white.py-2.px-4{href: "{% path_to home %}"} Home
-  /         {% for page_in_nav in site.pages %}
-  /         {% if page_in_nav.depth == 1 %}
-  /         {% if page_in_nav.listed? == true %}
-  /         %a{class: "text-white py-2 px-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}" } 
-  /           %span {{ page_in_nav.title }}
-  /         {% endif %}
-  /         {% endif %}
-  /         {% endfor %}
-  /         %a.text-white.py-2.px-4{href: "/contact-us"} Contact Us
-
-
-
-/ .featured-image{style: "background: url(/images/green-building.jpg) center center; background-size: cover;"}
-/   .overlay
+/ .bg-info.py-5.text-white
 /   .container
-/     .headline.w-50
-/       %h1.mb-0.text-white
-/         Community Impact Real Estate
-
-.bg-info.py-5.text-white
-  .container
-    %p.mb-0.lead Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level.
-  / .row
-  /   .col-sm-6
-  /     .bg-secondary.p-4{style: "min-height: 249px;"}
-  /       %h3.text-white Collaboration    
-  /       %p.text-white.mb-0 Respectful, active collaboration anchors our work in community.
-  /   .col-sm-6
-  /     .bg-secondary.p-4{style: "min-height: 249px; background-color: #F89621 !important;"}
-  /       %h3.text-white Inclusive
-  /       %p.text-white.mb-0 Fundamentally, all individuals have value and are deserving of respect and dignity. We commit to operating in community, respectful of diverse traditions, heritages, and experiences.
-  /   .col-sm-6
-  /     .bg-primary.p-4.mt-4{style: "min-height: 249px;"}
-  /       %h3.text-white Sustainable
-  /       %p.text-white.mb-0 We are accountable to those who contribute to help us achieve our mission and to those we serve. This accountability applies to and for operating a business that has a positive impact on the environment.
-  /   .col-sm-6
-  /     .bg-primary.p-4.mt-4{style: "min-height: 249px; background-color: #076F96 !important;"}
-  /       %h3.text-white Community Informed
-  /       %p.text-white.mb-0 Our actions and decisions are based on community identified needs, interests and opportunities.
+/     %p.mb-0.lead Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level.
 .container.my-5
-  %h2.mb-4.text-primary.text-center.mb-5 Our Values
-
   .row.mb-5
     .col-sm-6
       .goalbox.media
@@ -79,7 +31,6 @@ handle: home
         .media-body
           %h4.mb-4.text-primary.font-weight-normal Collaboration    
           %p.mb-0 Respectful, active collaboration anchors our work in community.
-
   .row.mb-5
     .col-sm-6
       .goalbox.media
@@ -87,8 +38,6 @@ handle: home
         .media-body
           %h4.mb-4.text-primary.font-weight-normal Sustainable
           %p.mb-0 We are accountable to those who contribute to help us achieve our mission and to those we serve. This accountability applies to and for operating a business that has a positive impact on the environment.
-
-
     .col-sm-6
       .goalbox.media
         %span.ln.ln-icon-MaleFemale.text-primary.mr-4
@@ -105,56 +54,12 @@ handle: home
       .post-listing.col-sm-4
         {% if post.featured_image.url %}
         .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
-
-        / %img{:alt => "{{ post.title | escape }}", :src => "{{ post.featured_image.url | resize: '400x200#' }}"}/
         {% endif %}
         .caption
           %h4.text-primary {{ post.title | escape }}
           %p.teaser {{ post.teaser }}
-
           %a{:href => "/posts/{{ post._slug }}", style: "text-decoration: underline; font-size: 1.125rem;"} Read More
       {% endfor %}
-
-    
-/ .container
-/   / %h2.mb-2.text-primary.text-center Values - Our Principles
-/   / %p.mb-3.text-center CIRES operates through the following values:
-/   .row
-/     .col-sm-6
-/       .bg-secondary.p-4{style: "min-height: 249px;"}
-/         %h3.text-white Collaboration    
-/         %p.text-white.mb-0 Respectful, active collaboration anchors our work in community.
-/     .col-sm-6
-/       .bg-secondary.p-4{style: "min-height: 249px; background-color: #F89621 !important;"}
-/         %h3.text-white Inclusive
-/         %p.text-white.mb-0 Fundamentally, all individuals have value and are deserving of respect and dignity. We commit to operating in community, respectful of diverse traditions, heritages, and experiences.
-/     .col-sm-6
-/       .bg-primary.p-4.mt-4{style: "min-height: 249px;"}
-/         %h3.text-white Sustainable
-/         %p.text-white.mb-0 We are accountable to those who contribute to help us achieve our mission and to those we serve. This accountability applies to and for operating a business that has a positive impact on the environment.
-/     .col-sm-6
-/       .bg-primary.p-4.mt-4{style: "min-height: 249px; background-color: #076F96 !important;"}
-/         %h3.text-white Community Informed
-/         %p.text-white.mb-0 Our actions and decisions are based on community identified needs, interests and opportunities.
-
-
 {% endblock %}
 
-{% block content/main %}
-.row
-  .col-lg-4
-    {% editable_text first_column %}
-    %h2 Heading #1
-    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-    {% endeditable_text %}
-  .col-lg-4
-    {% editable_text second_column %}
-    %h2 Heading #2
-    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-    {% endeditable_text %}
-  .col-lg-4
-    {% editable_text third_column %}
-    %h2 Heading #3
-    %p Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-    {% endeditable_text %}
-{% endblock %}
+
