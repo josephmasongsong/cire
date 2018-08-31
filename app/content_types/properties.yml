@@ -1,0 +1,89 @@
+# Human readable name of this type
+name: Properties
+
+# Lowercase, underscored handle used to access this type
+slug: properties
+
+# Explanatory text displayed in the back-office
+description: The list of CIRE properties
+
+# Slug of field used to identify entries by default, such as the title
+label_field_name: address
+
+# Valid values: manually, created_at, updated_at, or the slug of any field
+order_by: manually
+
+# Valid values: asc (ascending) and desc (descending). Set to asc by default.
+# order_direction: asc
+
+# Specify a field slug to group entries by that field in the back-office.
+# group_by: <your field>
+
+# Activate public 'create' API (e.g for a contact form)
+# public_submission_enabled: false
+
+# Array of emails to be notified of new entries made with the public API
+# public_submission_accounts: ['john@example.com']
+
+# Control the display of the content type in the back-office.
+# display_settings:
+#   seo: false              # display the SEO tab for the content entries
+#   advanced: false         # display the Advanced tab for the content entries
+#   position: 1             # position in the sidebar menu
+#   hidden: false           # hidden for authors?
+
+# By default, the back-office displays the _label property (see label_field_name) of the content entry. This can be modified by writing your own Liquid template below:
+# entry_template: '<a href="{{ link }}">{{ entry._label }}</a>' # The default template
+
+# A list describing each field
+fields: 
+- address: # The lowercase, underscored name of the field
+    label: Address # Human readable name of the field
+    type: string
+    required: true
+    hint: The address of the property. (ex. 1989 Dunbar Street, Vancouver BC)
+    localized: false
+
+- property_type: # The lowercase, underscored name of the field
+    label: Property type # Human readable name of the field
+    type: string
+    required: false
+    hint: ex. Street level storefront, office tower, etc 
+    localized: false
+
+- square_feet: # The lowercase, underscored name of the field
+    label: Square feet # Human readable name of the field
+    type: string
+    required: false
+    hint: ex. 1000 square feet
+    localized: false
+
+- price: # The lowercase, underscored name of the field
+    label: Price # Human readable name of the field
+    type: string
+    required: false
+    hint: ex. 5000/month
+    localized: false
+
+- description:
+    label: Description of property
+    type: text
+    required: false
+    hint: Brief property description
+    localized: false
+
+- lease:
+    label: Lease terms / length
+    type: string
+    hint: ex. month to month, 6 months, 1 year
+    required: false
+    localized: false
+
+- photos:
+    label: Photos
+    type: has_many
+    required: false
+    localized: false
+    class_name: photos # Define the slug of the target content type (eg. comments)
+    inverse_of: property  # Define the name of the field referring to Tests in the target content type
+    ui_enabled: true # If you want to manage the entries of the relationship directly from the source entry

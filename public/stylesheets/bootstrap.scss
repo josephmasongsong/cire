@@ -5,18 +5,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-//  $theme-colors: (
-//   "primary": #a4cf60,
-//   "dark": #333333,
-//   "secondary": #50907B,
-//   "info": #fdd207
-// );
+@import "custom_variables";
 
  $theme-colors: (
-  "primary": #014C69,
-  "secondary": #DE8032,
+  "primary": $brand-blue-dark,
+  "secondary": $brand-orange-dark,
   "dark": #333333,
-  "info": #076F96
+  "info": $brand-blue-medium,
+  "warning": $brand-orange-medium
 );
 
 $breadcrumb-divider: quote(">");

@@ -1,0 +1,15 @@
+%section
+  .container
+    %h3.mb-5.text-primary Latest Updates
+    .posts.row
+      {% for post in contents.posts limit: 3 %}
+      .col-sm-4
+        .post-listing.px-2
+          {% if post.featured_image.url %}
+          .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
+          {% endif %}
+          .caption
+            %h5.text-primary {{ post.title | escape }}
+            %p.teaser {{ post.teaser }}
+            %a.text-underline{:href => "/posts/{{ post._slug }}"} Read More
+      {% endfor %}

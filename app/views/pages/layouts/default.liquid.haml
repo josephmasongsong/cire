@@ -9,24 +9,42 @@ is_layout: false
     %meta{charset: "utf-8"}
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
-
     %title {{ site.name }}
-
+    %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/all.css", :integrity => "sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ", :rel => "stylesheet"}/
+    %link{:href => "https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css", :rel => "stylesheet"}/
     %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
-
     {{ 'bootstrap.css' | stylesheet_tag }}
     {{ 'application.css' | stylesheet_tag }}
-
   %body
     #wrapper
-      {% include 'nav' %}
-      {% block 'body' %}
-      {% endblock %} 
-      {% block 'callout' %}
+      {% include form_success %}
+      {% block top_msg %}
       {% endblock %}
-      {% include 'footer' %}
+      {% if page.slug == 'index' %}
+      {% include 'nav_transparent' %}
+      {% else %}
+      {% include nav %}
+      {% endif %}
+      {% block featured_image %}
+      {% endblock %}
+      {% block content %}
+      {% endblock %}
+      {% block callout %}
+      {% endblock %}      
+      {% include footer %}
     {{ 'jquery.min.js' | javascript_tag }}
+    %script{:src => "https://unpkg.com/smartphoto@1.1.0/js/jquery-smartphoto.min.js"}
     {{ 'holder.min.js' | javascript_tag }}
     {{ 'popper.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
+    :javascript
+      setTimeout(function() {
+        $('.alert').slideUp();
+      }, 4000);    
+    {% if page.slug == 'available-units' %}
+    {{ 'jquery-smartphoto.js' | javascript_tag }}
+    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyB-hAvSS4NGTJLE5SZRLpzvooS8snC48Xw&sensor=false", :type => "text/javascript"}
     {{ 'application.js' | javascript_tag }}
+    {% endif %}
+
+

@@ -1,50 +1,63 @@
 ---
 title: Available Units
-
-# true if the page is included in the menu
 listed: true
-
-# true if the page is published
 published: true
-
-# true if the page can be used as a layout for new pages created by the editors
-# is_layout: true
-
-# position among sibling pages
-# position: 2
-
-# sets a redirection to the given url (301)
-# redirect_url: "<url to a page or to a remote url>"
-
-# other unique identifier of this page. To be used with the path_to liquid tag.
-# handle: my-page-handle
-
-# content type that this page is templatizing
-# content_type: "<slug of one of the content types>"
-
-# editable_elements:
-#   'some_block/some_slug': "<text>"
-#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
-
-# Control the display of the page in the back-office.
-# display_settings:
-#   hidden: true          # hidden for authors?
+position: 2
 ---
-{% extends parent %}
+{% extends layouts/map %}
 
-{% block 'featured_image_wide' %}
-.featured-image{style: "background: url(/images/green-building.jpg) center center; background-size: cover;"}
-  .overlay
-  .container
-    .headline.w-50
-      %h1.mb-0.text-white
-        {{ page.title }}
-{% endblock %}
-{% block 'sidebar' %}
-{% include 'child_nav' %}
+{% block content/sidecontent %}
+%h5.mb-4.pl-3.py-2.text-primary{style: "border-left: 3px solid #DE8032;"} {% editable_text "Sidebar subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}
+%p.mb-5 
+  {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
+  Please refer to the 
+  %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+  and the 
+  %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+  before contacting CIRE. If you still have questions and are interested in leasing one of our units please 
+  %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
+  {% endeditable_text %}
 {% endblock %}
 
-{% block 'main' %}
-%h2.mb-3.text-primary Or social intrapreneurship, deep dive and shared unit of analysis parse social entrepreneur benefit corporation initiative.
-%p.mb-0 Or social intrapreneurship, deep dive and shared unit of analysis parse social entrepreneur benefit corporation initiative. Catalyze, systems thinking preliminary thinking unprecedented challenge strengthening infrastructure. Human-centered, design thinking strengthening infrastructure effective when. Support, then, indicators granular; deep dive, collective impact radical fairness resilient. Challenges and opportunities inclusive expose the truth effective altruism impact mobilize triple bottom line effective altruism shared unit of analysis. Justice humanitarian, storytelling collaborative cities low-hanging fruit. 
+{% block content/list %}
+{% paginate contents.properties by 3 %}
+{% for property in paginate.collection %}
+.media.mb-4.pb-4.border-bottom
+  .media-body
+    %h5.text-primary.mb-3 {{ property.address | remove: ", Vancouver, BC" }}
+
+    {% if property.description %}
+    .description-container.mt-2.mb-3 {{ property.description }}
+    {% endif %}
+
+    %div.d-inline-block.mr-2.text-primary.mb-3
+      %i.far.fa-building.mr-2.text-primary
+      {{ property.property_type }} 
+    %div.d-inline-block.mb-1.mr-2.text-primary.mb-3
+      %i.ln.ln-icon-Ruler-2.mr-2.text-primary
+      {{ property.square_feet }} 
+    %div.d-inline-block.text-primary.mb-3.mr-2
+      %i.fas.fa-dollar-sign.mr-2.text-primary
+      {{ property.price }}
+    %div.d-inline-block.text-primary.mb-3
+      %i.ln.ln-icon-Calendar-4.mr-2.text-primary
+      {{ property.lease }} lease
+
+
+    {% if property.photos.size > 0 %}
+    .photo-list
+      {% for photo in property.photos %}
+      %a.js-smartPhoto{"data-caption" => "{{ photo.description }}", "data-group" => "{{ property.address }}", "data-id" => "photo", :href => "{{ photo.file.url }}"}
+        %img.img-fluid{src: "{{ photo.file.url }}", style: "width: 120px;"}
+      {% endfor %}
+    {% endif %}
+{% endfor %}
+{% include 'pagination' with paginate %}
+{% endpaginate %}
+
 {% endblock %}
+
+{% block content/center_callout %}
+#map_canvas.mt-4
+{% endblock %}
+

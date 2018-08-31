@@ -1,0 +1,16 @@
+---
+title: General Description
+listed: true
+published: true
+position: 1
+
+---
+{% extends parent %}
+
+{% block 'content/main' %}
+{% endblock %}
+
+
+{% block 'content/center_callout' %}
+%div{style: "background: url({{ 'map.png' | theme_image_url }}) center center; background-size: cover; height:350px; width: 100%;"}
+{% endblock %}

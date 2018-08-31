@@ -3,47 +3,44 @@ title: Sidebar
 is_layout: true
 ---
 
-!!!
-%html{lang: "en"}
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta{charset: "utf-8"}
-    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
-    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+{% extends layouts/default %}
 
-    %title {{ site.name }}
+{% block top_msg %}
+{% include top_callout %}
+{% endblock %}
 
-    %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
+{% block featured_image %}
+{% include slim_header %}
+{% endblock %}
 
-    {{ 'bootstrap.css' | stylesheet_tag }}
-    {{ 'application.css' | stylesheet_tag }}
+{% block content %}
+%section
+  .container
+    .row
+      .col-sm-8.mr-auto
+        .freetext
+          {% editable_text "Freetext", rows: 10 %}
+          {% endeditable_text %}
+        {% block main %}
+        {% endblock %}
+        {% block list %}
+        {% endblock %}
+      .col-sm-4
+        .row
+          .col-sm-10.mx-auto
+            {% block sidecontent %}
+            {% endblock %}
+            {% block sidebar %}
+            {% include child_nav %}
+            {% endblock %}
+            {% editable_text "Freetext Sidebar", rows: 5 %}
+            {% endeditable_text %}
+    .row
+      .col-sm-12
+        {% block center_callout %}
+        {% endblock %}
+{% endblock %}
 
-  %body
-    #wrapper
-      {% include 'nav' %}
-      .d-flex.flex-column.flex-md-row.align-items-center.px-md-4.bg-primary
-        .container
-          {% include 'breadcrumb' %}
-
-      {% block 'featured_image_wide' %}
-      {% endblock %}
-      %main.py-5{role: "main"}
-        .container
-          {% block 'featured_image' %}
-          {% endblock %}
-          .row
-            .col-sm-3
-              {% block 'sidebar' %}
-              {% endblock %}
-            .col-sm-9
-              {% block 'main' %}
-              {% endblock %}
-              {% block 'list' %}
-              {% endblock %}
-
-      {% include 'footer' %}
-    {{ 'jquery.min.js' | javascript_tag }}
-    {{ 'holder.min.js' | javascript_tag }}
-    {{ 'popper.min.js' | javascript_tag }}
-    {{ 'bootstrap.min.js' | javascript_tag }}
-    {{ 'application.js' | javascript_tag }}
+{% block 'callout' %}
+{% include 'newsletter_signup' %}
+{% endblock %}      

@@ -1,53 +1,30 @@
 ---
 title: News
-
-# true if the page is included in the menu
-listed: false
-
-# true if the page is published
+listed: true
 published: true
-
-# true if the page can be used as a layout for new pages created by the editors
-# is_layout: true
-
-# position among sibling pages
-# position: 1
-
-# sets a redirection to the given url (301)
-# redirect_url: "<url to a page or to a remote url>"
-
-# other unique identifier of this page. To be used with the path_to liquid tag.
-# handle: my-page-handle
-
-# content type that this page is templatizing
-# content_type: "<slug of one of the content types>"
-
-# editable_elements:
-#   'some_block/some_slug': "<text>"
-#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
-
-# Control the display of the page in the back-office.
-# display_settings:
-#   hidden: true          # hidden for authors?
+position: 4
+display_settings:
+   hidden: true         
 ---
-{% extends 'layouts/sidebar' %}
+{% extends layouts/blank %}
 
-
-{% block main %}
-.posts
-  {% for post in contents.posts %}
-  .post-listing.mb-4
-    {% if post.featured_image.url %}
-    / %img{:alt => "{{ post.title | escape }}", :src => "{{ post.featured_image.url | resize: '400x200#' }}"}/
-    {% endif %}
-    .caption
-      %h2
-        %a{href:"/posts/{{ post._slug }}"} {{ post.title | escape }}
-      %p.teaser {{ post.teaser }}
-      / %p
-      /   %a{:href => "/posts/{{ post._slug }}"} Read More
-  {% endfor %}
+{% block top_msg %}
+{% include top_callout %}
 {% endblock %}
 
-
+{% block content/main %}
+.posts.row
+  {% for post in contents.posts %}
+  .col-sm-4
+    .post-listing.px-2.mb-5
+      {% if post.featured_image.url %}
+      .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
+      {% endif %}
+      .caption
+        %h5.text-primary {{ post.title | escape }}
+        .text-info.my-2 {{ post.posted_at | date: "%A, %B %d, %Y" }}
+        %p.teaser {{ post.teaser }}
+        %a.text-underline{:href => "/posts/{{ post._slug }}"} Read More
+  {% endfor %}
+{% endblock %}
 

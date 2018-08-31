@@ -1,8 +1,8 @@
-# development:
-#   host: dev.example.com
-#   email: john@doe.net
-#   password: apassword
-#   # api_key: <your api key here>
+development:
+  host: http://localhost:3000
+  handle: fluttering-badlands-7295
+  email: joseph@josephmasongsong.com
+  api_key: 8bd7319e56c3d5b940ee9d3fd24f34181c4baa97
 # staging:
 #   host: staging.example.com
 #   email: john@doe.net

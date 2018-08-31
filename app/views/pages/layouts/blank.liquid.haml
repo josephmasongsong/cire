@@ -1,0 +1,20 @@
+---
+title: Blank
+is_layout: true
+---
+{% extends layouts/default %}
+
+{% block featured_image %}
+{% include slim_header %}
+{% endblock %}
+
+
+{% block content %}
+%section
+  .container
+    {% block main %}
+    {% endblock %}
+    .freetext
+      {% editable_text "Freetext", rows: 10 %}
+      {% endeditable_text %}
+{% endblock %}

@@ -4,11 +4,12 @@ published: true
 ---
 {% extends 'layouts/default' %}
 
-{% block content %}
-.container
-  .jumbotron
-    {% editable_text jumbotron, rows: 5, priority: 1 %}
-    %h1.text-danger Arrggggh, page not found
-    %p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-    {% endeditable_text %}
+{% block featured_image %}
+%section.fat-header.bg-secondary{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
+  .overlay-with-gradient.blue.transparent
+  .container.home-text
+    %h1.mb-4.display-4.font-weight-bold.text-white
+      Page Not Found
+    %p.lead.mb-0.text-white 
+      We're sorry but the page you are looking for has either been deleted or the link has changed.
 {% endblock %}

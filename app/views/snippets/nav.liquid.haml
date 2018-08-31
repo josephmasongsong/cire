@@ -1,8 +1,9 @@
 
-%nav.navbar.navbar-expand-sm.navbar-light.bg-white.p-0.main-nav
-  .container.p-0
+%nav.navbar.navbar-expand-sm.navbar-light.bg-transparent.p-0.main-nav.box-shadow
+  .container
     %a.navbar-brand.m-0.p-0{href: "{% path_to home %}"}
-      %img{src: "{{ 'cire-logo.png' | theme_image_url }}", style: "width: 255px;"}
+      %img{src: "{{ 'CommImpactLogo_standard.png' | theme_image_url }}", style: "width: 280px;"}
+
     %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
       %span.navbar-toggler-icon
     .collapse.navbar-collapse
@@ -10,48 +11,22 @@
         {% for page_in_nav in site.pages %}
         {% if page_in_nav.depth == 1 %}
         {% if page_in_nav.listed? == true %}
-
         {% if page_in_nav.children.size > 0 %}
-
         %li.nav-item.dropdown
           %a{class: "text-primary dropdown-toggle nav-link px-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}",  "data-toggle" => "dropdown" } 
             %span {{ page_in_nav.title }}       
-          .dropdown-menu.p-0.rounded-0
+          .dropdown-menu.p-0.rounded-0.border-0
             {% for child in page_in_nav.children %}
-            %a.dropdown-item.px-3.py-2{:href => "{% path_to child %}"} {{ child.title }}
+            %a.dropdown-item.p-3.text-primary{:href => "{% path_to child %}"} {{ child.title }}
             {% endfor %}
-
         {% else %}
         %li.nav-item
           %a{class: "text-primary nav-link px-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}" } 
             %span {{ page_in_nav.title }}
-
         {% endif %}
-
         {% endif %}
         {% endif %}
         {% endfor %}
-        %a.text-text.nav-link.pl-4{href: "/contact-us"} Contact Us
 
-      / %a.text-text.btn.btn-secondary.px-4.py-2.ml-4{href: "/contact-us"} Contact Us
-
-/ .d-flex.flex-column.flex-md-row.align-items-center.px-md-4.bg-primary
-/   .container
-/     %nav.nav.mr-auto.top-nav
-/       {% for page_in_nav in site.pages %}
-/       {% if page_in_nav.depth == 1 %}
-/       {% if page_in_nav.listed? == true %}
-/       %a{class: "text-white py-2 px-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}" } {{ page_in_nav.title }}
-/       {% endif %}
-/       {% endif %}
-/       {% endfor %}
-/       %a.text-white.py-2.px-4{href: "/contact-us"} Contact Us
-
-/ .d-flex.flex-column.flex-md-row.align-items-center.px-md-4.bg-primary
-/   .container
-/     %nav.nav.mr-auto.top-nav
-/       {% for child in page.parent.children %}
-/       %a{class: "text-white py-3 px-4 {% if child.fullpath == page.fullpath %}active{% endif %}", href: "{% path_to child %}" } {{ child.title }}
-/       {% endfor %}
 
 

@@ -41,28 +41,21 @@ fields:
     label: Title # Human readable name of the field
     type: string
     required: true
-    hint: Explanatory text displayed in the back office
+    hint: The title of the post
     localized: false
 
 - posted_at: # The lowercase, underscored name of the field
     label: true # Human readable name of the field
     type: date_time
     required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
-- tags: # The lowercase, underscored name of the field
-    label: Tags # Human readable name of the field
-    type: tags
-    required: false
-    hint: Explanatory text displayed in the back office
+    hint: Date posted
     localized: false
 
 - teaser: # The lowercase, underscored name of the field
     label: Teaser # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: Post teaser
     localized: false
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
 
@@ -70,13 +63,20 @@ fields:
     label: Featured image # Human readable name of the field
     type: file
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: The image that shows up in the header 
     localized: false
 
 - body: # The lowercase, underscored name of the field
     label: Body # Human readable name of the field
     type: text
     required: false
-    hint: Explanatory text displayed in the back office
+    hint: The content of the post 
     localized: false
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
+
+- tags: # The lowercase, underscored name of the field
+    label: Tags # Human readable name of the field
+    type: tags
+    required: false
+    hint: Tags for categorization
+    localized: false

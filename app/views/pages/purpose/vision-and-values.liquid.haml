@@ -1,0 +1,88 @@
+---
+title: Vision & Values
+listed: true
+published: true
+position: 3
+---
+{% extends 'layouts/fullwidth' %}
+
+
+{% block content/list %}
+
+%h3.text-primary.mb-4.text-center {% editable_text "Vision header", format: raw, rows: 1 %} Our Vision {% endeditable_text %}
+%p.mb-0.text-center {% editable_text "Vision blurb", format: raw, rows: 3 %} Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level. {% endeditable_text %}
+
+%hr.section-divider
+
+        
+%h3.text-primary.mb-4.text-center {% editable_text "Values header", format: raw, rows: 1 %} Our Values {% endeditable_text %}
+%p.mb-5.lead.text-center {% editable_text "Values blurb", format: raw, rows: 3 %} CIRES operates through the following values: {% endeditable_text %}
+.row.mb-5
+  .col-sm-6
+    .feature-column-content.media
+      %span.ln.ln-icon-Megaphone.text-secondary.mr-4
+      .media-body
+        %h5.mb-4.text-primary {% editable_text "Block 1 header", format: raw, rows: 1 %} Community Informed {% endeditable_text %}
+        %p.mb-0 {% editable_text "Block 1 blurb", format: raw, rows: 3 %} Our actions and decisions are based on community identified needs, interests and opportunities. {% endeditable_text %}
+  .col-sm-6
+    .feature-column-content.media
+      %span.ln.ln-icon-Handshake.text-secondary.mr-4
+      .media-body
+        %h5.mb-4.text-primary {% editable_text "Block 2 header", format: raw, rows: 1 %} Collaboration {% endeditable_text %}    
+        %p.mb-0 {% editable_text "Block 2 blurb", format: raw, rows: 3 %} Respectful, active collaboration anchors our work in community. {% endeditable_text %}
+.row
+  .col-sm-6
+    .feature-column-content.media
+      %span.ln.ln-icon-Environmental-3.text-secondary.mr-4
+      .media-body
+        %h5.mb-4.text-primary {% editable_text "Block 3 header", format: raw, rows: 1 %}Sustainable {% endeditable_text %}
+        %p.mb-0  {% editable_text "Block 3 blurb", format: raw, rows: 3 %} Accountability applies to and for operating a business that has a positive impact on the environment. {% endeditable_text %}
+  .col-sm-6
+    .feature-column-content.media
+      %span.ln.ln-icon-MaleFemale.text-secondary.mr-4
+      .media-body
+        %h5.mb-4.text-primary {% editable_text "Block 4 header", format: raw, rows: 1 %} Inclusive {% endeditable_text %}
+        %p.mb-0  {% editable_text "Block 4 blurb", format: raw, rows: 3 %} We commit to operating in community, respectful of diverse traditions, heritages, and experiences. {% endeditable_text %}
+
+{% endblock %}
+
+
+{% block 'content/fullwidth' %}
+.row.mb-5
+  .col-sm-4.sidebar
+    .row
+      .col-sm-11
+        %h3.text-primary.mb-4 {% editable_text "Vision header", format: raw, rows: 1 %} Our Vision {% endeditable_text %}
+        %p.mb-0.lead {% editable_text "Vision blurb", format: raw, rows: 3 %} Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level. {% endeditable_text %}
+
+
+  .col-sm-8
+    .row
+      .col-sm-12
+        %h3.text-primary.mb-4.text-center {% editable_text "Values header", format: raw, rows: 1 %} Our Values {% endeditable_text %}
+        %p.mb-5.lead.text-center {% editable_text "Values blurb", format: raw, rows: 3 %} CIRES operates through the following values: {% endeditable_text %}
+    .row.mb-5
+      .col-sm-5.mx-auto
+        .feature-column-content
+          %span.ln.ln-icon-Megaphone.text-primary.mb-4.d-block.text-secondary
+          %h5.mb-4.text-primary {% editable_text "Block 1 header", format: raw, rows: 1 %} Community Informed {% endeditable_text %}
+          %p.mb-0  {% editable_text "Block 1 blurb", format: raw, rows: 3 %} Our actions and decisions are based on community identified needs, interests and opportunities. {% endeditable_text %}
+      .col-sm-5.mx-auto
+        .feature-column-content
+          %span.ln.ln-icon-Handshake.text-primary.mb-4.d-block.text-secondary
+          %h5.mb-4.text-primary {% editable_text "Block 2 header", format: raw, rows: 1 %} Collaboration {% endeditable_text %}    
+          %p.mb-0  {% editable_text "Block 2 blurb", format: raw, rows: 3 %} Respectful, active collaboration anchors our work in community. We engage with a variety of stakeholders. {% endeditable_text %}
+    .row
+      .col-sm-5.mx-auto
+        .feature-column-content
+          %span.ln.ln-icon-Environmental-3.text-primary.mb-4.d-block.text-secondary
+          %h5.mb-4.text-primary {% editable_text "Block 3 header", format: raw, rows: 1 %} Sustainable {% endeditable_text %}
+          %p.mb-0  {% editable_text "Block 3 blurb", format: raw, rows: 3 %} Accountability applies to and for operating a business that has a positive impact on the environment. {% endeditable_text %}
+      .col-sm-5.mx-auto
+        .feature-column-content
+          %span.ln.ln-icon-MaleFemale.text-primary.mb-4.d-block.text-secondary
+
+          %h5.mb-4.text-primary {% editable_text "Block 4 header", format: raw, rows: 1 %} Inclusive {% endeditable_text %}
+          %p.mb-0  {% editable_text "Block 4 blurb", format: raw, rows: 3 %} We commit to operating in community, respectful of diverse traditions, heritages, and experiences. {% endeditable_text %}
+{% endblock %}
+

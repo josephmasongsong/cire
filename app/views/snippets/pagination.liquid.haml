@@ -1,0 +1,10 @@
+.text-center
+  %ul.pagination
+    %li{class: "page-item {% unless paginate.previous_page %}disabled{% endunless %}"}
+      %a.page-link{href: "{{ paginate.previous.url }}"} <
+    {% for page in paginate.parts %}
+    %li{class: "page-item {% unless page.is_link %}active{% endunless %}"}
+      %a.page-link{href: "{{ page.url }}"}{{ page.title }}
+    {% endfor %}
+    %li{class: "page-item {% unless paginate.next_page %}disabled{% endunless %}"}
+      %a.page-link{href: "{{ paginate.next.url }}"} >

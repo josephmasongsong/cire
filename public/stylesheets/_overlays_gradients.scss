@@ -1,0 +1,65 @@
+@import "custom_variables";
+
+.bg-primary, .bg-secondary, .bg-info, .bg-warning {
+	color: #fff;
+}
+
+.overlay, .overlay-with-gradient {
+  content: '';
+  position: absolute;	
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;	
+}
+
+.bg-light-blue {
+  background: $brand-blue-light;
+}
+.bg-dark {
+  background: rgba(#000, 0.5) !important;
+}
+
+.overlay.bg-dark {
+  background: rgba(#222, 0.75) !important;
+}
+.overlay.bg-primary  {
+  background: rgba($brand-blue-dark,0.85) !important;
+}
+.bg-info .overlay {
+  background: rgba($brand-blue-medium,0.9);
+}
+.bg-secondary .overlay {
+  background: rgba($brand-orange-dark,0.9);
+}
+.bg-warning .overlay {
+  background: rgba($brand-orange-medium,0.9);
+}
+
+.overlay-with-gradient {
+  &.light-blue {
+    background: linear-gradient(to right, white 0%, $brand-blue-light 100%);
+    &.transparent {
+      background: linear-gradient(to right, rgba(white, 0.75%) 0%, rgba($brand-blue-light,1) 100%);
+    }
+  }
+  &.blue {
+		background: linear-gradient(to right, $brand-blue-dark 0%, $brand-blue-medium 100%);
+		&.transparent {
+  		background: linear-gradient(to right, rgba($brand-blue-dark, 1) 0%, rgba($brand-blue-medium,0.65) 100%);
+		}
+  }
+  &.orange {
+		background: linear-gradient(to right, $brand-orange-dark 0%, $brand-orange-medium 100%);
+		&.transparent {
+  		background: linear-gradient(to right, rgba($brand-orange-dark, 1) 0%, rgba($brand-orange-medium,0.5) 100%);
+		}
+  }
+}
+
+.blue-gradient {
+    background: linear-gradient(to right, $brand-blue-dark 0%, $brand-blue-medium 100%);
+}
+.orange-gradient {
+    background: linear-gradient(to right, $brand-orange-dark 0%, $brand-orange-medium 100%);
+}

@@ -1,39 +1,51 @@
 ---
 title: Contact Us
-
-# true if the page is included in the menu
-listed: false
-
-# true if the page is published
+listed: true
 published: true
-
-# true if the page can be used as a layout for new pages created by the editors
-# is_layout: true
-
-# position among sibling pages
-# position: 1
-
-# sets a redirection to the given url (301)
-# redirect_url: "<url to a page or to a remote url>"
-
-# other unique identifier of this page. To be used with the path_to liquid tag.
-# handle: my-page-handle
-
-# content type that this page is templatizing
-# content_type: "<slug of one of the content types>"
-
-# editable_elements:
-#   'some_block/some_slug': "<text>"
-#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
-
-# Control the display of the page in the back-office.
-# display_settings:
-#   hidden: true          # hidden for authors?
+position: 5
 ---
-{% extends parent %}
+{% extends layouts/contact %}
 
-{% block main %}
+{% block content/sidebar %}
+%h5.mb-4.pl-3.py-2.text-primary{style: "border-left: 3px solid #DE8032;"} {% editable_text "sidebar header", format: raw, rows: 2 %}Still have questions?{% endeditable_text %}
+%p.mb-5 
+  {% editable_text "sidebar blurb", format: raw, rows: 3 %}
+  Please refer to the 
+  %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+  and the 
+  %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+  before contacting CIRE. If you still have questions and are interested in leasing one of our units please contact us.
+  {% endeditable_text %}
+{% endblock %}
 
-%p Hello world
+{% block content/main %}
+
+{% if message.errors %}
+.alert.alert-danger.alert-dismissible.fade.show.mb-4
+  %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+    %span{"aria-hidden" => "true"} ×
+  %h5 Form Submission Errors
+  %ul.mb-0
+    {% for error in message.errors %}
+    %li {{error[0] | capitalize}} -  {{error[1]}}
+    {% endfor %}
+{% endif %}
+
+%form{:action => "{{contents.messages.public_submission_url}}", :method => "post"}
+  {% csrf_param %}
+  %input{:name => "success_callback", :type => "hidden", :value => "/?form=success"}/
+  %input{:name => "error_callback", :type => "hidden", :value => "{% path_to page %}"}/
+  %input{:name => "form-type", :type => "hidden", :value => "contact"}/
+  .form-group
+    %label.control-label{:for => "mailform-input-name"} Name
+    %input.form-control{:name => "content[name]", :type => "text", :value => "{{ message.name }}"}/
+  .form-group
+    %label.control-label Email
+    %input.form-control{:name => "content[email]", :type => "email", :value => "{{ message.email }}"}/
+  .form-group
+    %label.control-label Message
+    %textarea.form-control{:name => "content[body]", :rows => "5"} {{ message.body }}
+  .form-group.mb-0
+    %button.btn.btn-info{:type => "submit"} Send Message
 
 {% endblock %}

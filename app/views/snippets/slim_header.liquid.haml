@@ -1,0 +1,10 @@
+%section.bg-secondary.px-5{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'neighbourhood.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover; height:350px;"}
+  .overlay-with-gradient.blue.transparent
+  .container
+    %div{style:"position:absolute;z-index:2;color: #fff !important; top:50%; transform: translateY(-50%);"}
+      %h1.mb-1.text-white {{ page.title }}
+      %p.lead.mb-0 
+        {% editable_text "subheader", format: raw, rows: 2 %}
+        Insert snazzy catchy subheader here
+        {% endeditable_text %}
+

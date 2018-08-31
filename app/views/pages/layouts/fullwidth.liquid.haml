@@ -2,50 +2,33 @@
 title: Full width
 is_layout: true
 ---
+{% extends layouts/default %}
 
-!!!
-%html{lang: "en"}
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
-    %meta{charset: "utf-8"}
-    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
-    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+{% include nav %}
 
-    %title {{ site.name }}
-
-    %link{href: "{{ 'favicon.png' | theme_image_url }}", rel: "shortcut icon"}
-
-    {{ 'bootstrap.css' | stylesheet_tag }}
-    {{ 'application.css' | stylesheet_tag }}
-
-  %body
-    #wrapper
-      {% include 'nav' %}
-      / .d-flex.flex-column.flex-md-row.align-items-center.px-md-4.bg-primary
-      /   .container
-      /     {% include 'breadcrumb' %}
+{% block featured_image %}
+{% include fat_header %}
+{% endblock %}
 
 
-      .d-flex.flex-column.flex-md-row.align-items-center.px-md-4.bg-primary
-        .container
-          %nav.nav.mr-auto.top-nav
-            {% for child in page.parent.children %}
-            %a{class: "text-white py-3 px-4 {% if child.fullpath == page.fullpath %}active{% endif %}", href: "{% path_to child %}" } {{ child.title }}
-            {% endfor %}
+{% block content %}
 
-      {% block 'featured_image_wide' %}
-      {% endblock %}
-      %main.py-5{role: "main"}
-        .container
-          {% block 'main' %}
-          {% endblock %}
-          {% block 'grid' %}
-          {% endblock %}
+.pt-5.pb-0
+  .container
+    %nav.nav.nav-fill.mb-0.nav-full
+      {% for child in page.parent.children %}
+      %a{class: "py-1 border-right nav-item {% if child.fullpath == page.fullpath %}active{% endif %}", href: "{% path_to child %}" } {{ child.title }}
+      {% endfor %}
 
+%section
+  .container
+    {% block main %}
+    {% endblock %}
+    {% block fullwidth %}
+    {% endblock %}
+{% endblock %}
 
-      {% include 'footer' %}
-    {{ 'jquery.min.js' | javascript_tag }}
-    {{ 'holder.min.js' | javascript_tag }}
-    {{ 'popper.min.js' | javascript_tag }}
-    {{ 'bootstrap.min.js' | javascript_tag }}
-    {{ 'application.js' | javascript_tag }}
+{% block callout %}
+{% include newsletter_signup %}
+{% endblock %}
+

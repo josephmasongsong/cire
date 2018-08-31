@@ -1,0 +1,40 @@
+- Sample 1:
+    _slug: sample-1
+    description: Sample 1
+    file: "/samples/content_entries/corner-building.jpg"
+    property: 122-powell-street-vancouver-bc
+- Sample 2:
+    _slug: sample-2
+    description: Sample 2
+    file: "/samples/content_entries/condos.jpg"
+    property: 122-powell-street-vancouver-bc
+- Sample 4:
+    _slug: sample-4
+    description: Sample 4
+    file: "/samples/content_entries/building.jpg"
+    property: 122-powell-street-vancouver-bc
+- exterior shot:
+    _slug: exterior-shot
+    description: exterior shot
+    file: "/samples/content_entries/corner-building.jpg"
+    property: 30-west-hastings-street-vancouver-bc
+- another shot of the outside:
+    _slug: another-shot-of-the-outside
+    description: another shot of the outside
+    file: "/samples/content_entries/mark-rabe-513115-unsplash.jpg"
+    property: 30-west-hastings-street-vancouver-bc
+- exterior shot:
+    _slug: exterior-shot-1
+    description: exterior shot
+    file: "/samples/content_entries/thr3-eyes-168128-unsplash.jpg"
+    property: 1a-337-gore-avenue-vancouver-bc
+- exterior shot side:
+    _slug: exterior-shot-side
+    description: exterior shot side
+    file: "/samples/content_entries/mark-rabe-513115-unsplash.jpg"
+    property: 1a-337-gore-avenue-vancouver-bc
+- west tower:
+    _slug: west-tower
+    description: west tower
+    file: "/samples/content_entries/stefan-steinbauer-39664-unsplash.jpg"
+    property: 1a-337-gore-avenue-vancouver-bc

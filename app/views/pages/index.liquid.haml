@@ -3,63 +3,60 @@ title: Home
 published: true
 handle: home
 ---
-{% extends 'layouts/splash' %}
+{% extends 'layouts/default' %}
 
-{% block body %}
-.featured-image-large.bg-primary{style: "background: url(/images/neighbourhood.jpg) center center; background-size: cover;"}
-  .overlay
-  .container
-    %h1.mb-0.text-white.text-uppercase.display-4.font-weight-bold 
-      Healthy, Empowered
+{% block featured_image %}
+%header.featured-image-large.callout-wide.homepage{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
+  .overlay-with-gradient.blue.transparent
+  .container.home-text
+    %h1.mb-4.display-4.font-weight-bold.text-white
+      {% editable_text "pageheader", format: raw, rows: 2 %}
+      Healthy, Empowered 
       %br
       Communities
+      {% endeditable_text %}
+    %p.lead.mb-0.text-white 
+      {% editable_text "pagesubheader", format: raw, rows: 2 %}
+      Capacity building challenges and opportunities improve the world
+      %br
+      impact shared unit of analysis progress B-corp emerging.
+      {% endeditable_text %}
+{% endblock %}
 
-/ .bg-info.py-5.text-white
-/   .container
-/     %p.mb-0.lead Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level.
-.container.my-5
-  .row.mb-5
-    .col-sm-6
-      .goalbox.media
-        %span.ln.ln-icon-Megaphone.text-primary.mr-4
-        .media-body
-          %h4.mb-4.text-primary.font-weight-normal Community Informed
-          %p.mb-0 Our actions and decisions are based on community identified needs, interests and opportunities.
-    .col-sm-6
-      .goalbox.media
-        %span.ln.ln-icon-Handshake.text-primary.mr-4
-        .media-body
-          %h4.mb-4.text-primary.font-weight-normal Collaboration    
-          %p.mb-0 Respectful, active collaboration anchors our work in community.
-  .row.mb-5
-    .col-sm-6
-      .goalbox.media
-        %span.ln.ln-icon-Environmental-3.text-primary.mr-4
-        .media-body
-          %h4.mb-4.text-primary.font-weight-normal Sustainable
-          %p.mb-0 We are accountable to those who contribute to help us achieve our mission and to those we serve. This accountability applies to and for operating a business that has a positive impact on the environment.
-    .col-sm-6
-      .goalbox.media
-        %span.ln.ln-icon-MaleFemale.text-primary.mr-4
-        .media-body
-          %h4.mb-4.text-primary.font-weight-normal Inclusive
-          %p.mb-0 Fundamentally, all individuals have value and are deserving of respect and dignity. We commit to operating in community, respectful of diverse traditions, heritages, and experiences.
+{% block content %}
 
-
-.bg-light.py-5
+%section.bg-white
   .container
-    %h2.mb-4.text-primary Latest Updates
-    .posts.row
-      {% for post in contents.posts limit: 3 %}
-      .post-listing.col-sm-4
-        {% if post.featured_image.url %}
-        .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
-        {% endif %}
-        .caption
-          %h4.text-primary {{ post.title | escape }}
-          %p.teaser {{ post.teaser }}
-          %a{:href => "/posts/{{ post._slug }}", style: "text-decoration: underline; font-size: 1.125rem;"} Read More
-      {% endfor %}
+    .row
+      .col-sm-10.mx-auto 
+        %h3.text-center.mb-4.text-primary {% editable_text "subheader", format: raw, rows: 2 %} What We Do {% endeditable_text %}
+        %p.mb-0.lead.text-center {% editable_text "statement", format: raw, rows: 4 %} Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social service support and employment opportunities for the residents in the communities within which we work. {% endeditable_text %}
+
+    %hr.section-divider
+
+    .row
+      .col-sm-4
+        .feature-column-content.px-3
+          %h5.mb-3.text-primary {% editable_text "Col 1 Header", format: raw, rows: 1 %}Purpose{% endeditable_text %}
+          %p.mb-3  {% editable_text "col 1 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
+          %a.text-underline{:href => "/purpose"} Read More
+      .col-sm-4
+        .feature-column-content.px-3
+          %h5.mb-3.text-primary {% editable_text "Col 2 Header", format: raw, rows: 1 %}Portfolio{% endeditable_text %}
+          %p.mb-3  {% editable_text "col 2 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
+          %a.text-underline{:href => "/portfolio"} Read More
+      .col-sm-4
+        .feature-column-content.px-3
+          %h5.mb-3.text-primary {% editable_text "Col 3 Header", format: raw, rows: 1 %}People{% endeditable_text %}
+          %p.mb-3  {% editable_text "col 3 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
+          %a.text-underline{:href => "/people"} Read More
+
+
+
+{% include newsletter_signup %}  
+
+{% include news_list %}
+
 {% endblock %}
 
 
