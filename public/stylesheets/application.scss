@@ -1,6 +1,5 @@
 @import "custom_variables";
 @import "linearicons.css";
-@import "simple-line-icons.css";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
 @import "overlays_gradients";
 @import "navigation";
@@ -47,12 +46,15 @@ a:hover {
 a.text-underline {
   text-decoration: underline;
 }      
-.hamburger-box {
-  top: 5px;
+
+.callout-text{
+  height: 500px;
 }
-.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
-  background-color: $brand-blue-medium;
+
+.newsletter-signup {
+  height: 300px;
 }
+
 section {
   position: relative;
   padding: 5rem 0;

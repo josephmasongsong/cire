@@ -4,7 +4,7 @@
     .posts.row
       {% for post in contents.posts limit: 3 %}
       .col-sm-6.col-md-4
-        .post-listing.px-2.mb-0
+        .post-listing.px-2.mb-4.mb-md-0
           {% if post.featured_image.url %}
           .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
           {% endif %}

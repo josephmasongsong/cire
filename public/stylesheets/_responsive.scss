@@ -1,5 +1,13 @@
-.newsletter-signup {
-	height: 300px;
+
+.hamburger-box {
+    top: 3px;
+    left: 5px;
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  background-color: $brand-blue-dark;
+  border-radius: 0;
+  height: 3px; 
+  width: 32px;
 }
 
 @media (min-width: 576px) {
@@ -11,11 +19,41 @@
 }
 
 @media (max-width: 767.98px) { 
+	.main-nav.large-nav li.nav-item a {
+		padding: 1.25rem 0;
+	}
+	.main-nav a.nav-link.active, .main-nav a.nav-link:hover {
+		border-left: 4px solid #DE8032;
+		border-bottom: 0;
+
+	}
+	.main-nav a.nav-link {
+		border-left: 4px solid transparent;
+		border-bottom: 0;
+		border-top: 0;
+		padding: 1.25rem 0;
+	}
+	.no-gutters {
+	    margin-right: -15px;
+	    margin-left: -15px;
+	}
+	body {
+		font-size: 0.875rem;
+	}
+	h5 {
+		font-size: 1.125rem;
+	}
+	h4 {
+		font-size: 1.25rem;
+	}
+	.pad-top {
+	  padding-top: 67px;
+	}
 	.container {
 		max-width: initial;
 	}	
 	body section .lead {
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	body section hr.section-divider {
 	    margin: 3.5rem 0;
@@ -29,18 +67,18 @@
 	}
 	.feature-column-content {
 		p, a {
-			font-size: 1rem;
+			font-size: 0.9rem;
 		}
 	}
 	.fat-header {
 		h1 {
-			font-size: 2.5rem;
+			font-size: 2.25rem;
 		}		
 	}
 	.featured-image-large {
 		height: 500px;
 		h1 {
-			font-size: 2.5rem;
+			font-size: 2.25rem;
 		}
 		.lead {
 			font-size: 1rem;

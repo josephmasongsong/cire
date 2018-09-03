@@ -1,4 +1,4 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-2.p-sm-0.main-nav
+%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-md-2.p-0.main-nav
   .container
     %a.navbar-brand.m-0.p-0{href: "{% path_to home %}"}
       %img{src: "{{ 'CommImpactLogo_standard.png' | theme_image_url }}"}
@@ -12,7 +12,7 @@
         {% if page_in_nav.listed? == true %}
         {% if page_in_nav.children.size > 0 %}
         %li.nav-item.dropdown
-          %a{class: "text-primary dropdown-toggle nav-link px-sm-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}",  "data-toggle" => "dropdown" } 
+          %a{class: "text-primary dropdown-toggle nav-link pl-4 px-sm-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}",  "data-toggle" => "dropdown" } 
             %span {{ page_in_nav.title }}       
           .dropdown-menu.p-0.rounded-0.border-0
             {% for child in page_in_nav.children %}
@@ -20,7 +20,7 @@
             {% endfor %}
         {% else %}
         %li.nav-item
-          %a{class: "text-primary nav-link px-sm-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}" } 
+          %a{class: "text-primary nav-link pl-4 px-sm-4 {% if page.fullpath == page_in_nav.fullpath or page_in_nav.title == page.parent.title %}active{% endif %}", href: "{% path_to page_in_nav %}" } 
             %span {{ page_in_nav.title }}
         {% endif %}
         {% endif %}
