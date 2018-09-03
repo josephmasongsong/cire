@@ -1,10 +1,10 @@
-%section.px-5{style: "background: url({% capture image_url %}{% editable_file 'callout_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dtvan.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover; height:300px;"}
-  .overlay-with-gradient.blue.transparent
-  .container{style: "position:relative; top:50%; transform: translateY(-50%);"}
+%section.px-3.px-sm-5.newsletter-signup{style: "background: url({% capture image_url %}{% editable_file 'callout_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dtvan.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+  .overlay-with-gradient.orange.transparent
+  .container.center-v
     .row
       .col-sm-5.align-self-center
         %h3.text-light.mb-3 {% editable_text "newsletter header", format: raw, rows: 1 %}Sign up for email updates{% endeditable_text %}
-        %p.text-light.mb-0.mt-2
+        %p.text-light.mb-3.mb-sm-0.mt-2
           {% editable_text "newsletter blurb", format: raw, rows: 4 %}Enter your email to get updates on CIRES. We will not pass on your email to any third parties and you may decide opt out at any time.{% endeditable_text %} 
       .col-sm-7.align-self-center
         {% if newsletter.errors %}
@@ -20,11 +20,11 @@
         %form.form.d-block.download-form.mb-0#download_form{:action => "{{ contents.newsletters.public_submission_url }}", :method => "post"}
           {% csrf_param %}
           .row
-            .col-sm-5
+            .col-md-5
               %input{:name => "success_callback", :type => "hidden", :value => "{% path_to page %}?form=success"}/
               %input{:name => "error_callback", :type => "hidden", :value => "{% path_to page %}"}/
               %input.form-control.mr-1{:name => "content[name]", :type => "text", placeholder: "Name"}/
-            .col-sm-5
+            .col-md-5
               %input.form-control.mr-1{type: "email", name: "content[email]", placeholder: "Email"}
-            .col-sm-2
+            .col-md-2
               %button.btn.btn-outline-light.w-auto{type: "submit"} Subscribe

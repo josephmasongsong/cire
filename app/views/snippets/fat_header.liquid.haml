@@ -1,8 +1,4 @@
-%section.fat-header.bg-secondary{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'neighbourhood.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
-  .overlay-with-gradient.blue.transparent
-  .container
-    %h1.mb-1.text-center {{ page.title }}
-    %p.lead.mb-0.text-center 
-      {% editable_text "subheader", format: raw, rows: 2 %}
-      Insert snazzy catchy subheader here
-      {% endeditable_text %}
+%section.fat-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'vancouver.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+  %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
+  .container.center-vh
+    %h1.mb-0.text-center {{ page.title }}

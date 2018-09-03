@@ -4,60 +4,104 @@ listed: true
 published: true
 position: 2
 ---
-{% extends layouts/map %}
+{% extends layouts/sidebar %}
 
 {% block content/sidecontent %}
-%h5.mb-4.pl-3.py-2.text-primary{style: "border-left: 3px solid #DE8032;"} {% editable_text "Sidebar subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}
-%p.mb-5 
-  {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
-  Please refer to the 
-  %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
-  and the 
-  %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
-  before contacting CIRE. If you still have questions and are interested in leasing one of our units please 
-  %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
-  {% endeditable_text %}
+.bg-light.p-4.mb-5.mt-5.mt-sm-0
+  %h5.mb-4.text-primary {% editable_text "Sidebar subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}
+  %p.mb-0 
+    {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
+    Please refer to the 
+    %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+    and the 
+    %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please 
+    %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
+    {% endeditable_text %}
+{% endblock %}
+
+
+{% block content/main %}
+#map_canvas.mb-4
 {% endblock %}
 
 {% block content/list %}
-{% paginate contents.properties by 3 %}
+{% paginate contents.properties by 10 %}
 {% for property in paginate.collection %}
-.media.mb-4.pb-4.border-bottom
+.media.py-3.border-bottom
   .media-body
-    %h5.text-primary.mb-3 {{ property.address | remove: ", Vancouver, BC" }}
-
-    {% if property.description %}
-    .description-container.mt-2.mb-3 {{ property.description }}
-    {% endif %}
-
-    %div.d-inline-block.mr-2.text-primary.mb-3
-      %i.far.fa-building.mr-2.text-primary
-      {{ property.property_type }} 
-    %div.d-inline-block.mb-1.mr-2.text-primary.mb-3
-      %i.ln.ln-icon-Ruler-2.mr-2.text-primary
-      {{ property.square_feet }} 
-    %div.d-inline-block.text-primary.mb-3.mr-2
-      %i.fas.fa-dollar-sign.mr-2.text-primary
-      {{ property.price }}
-    %div.d-inline-block.text-primary.mb-3
-      %i.ln.ln-icon-Calendar-4.mr-2.text-primary
-      {{ property.lease }} lease
-
-
-    {% if property.photos.size > 0 %}
-    .photo-list
-      {% for photo in property.photos %}
-      %a.js-smartPhoto{"data-caption" => "{{ photo.description }}", "data-group" => "{{ property.address }}", "data-id" => "photo", :href => "{{ photo.file.url }}"}
-        %img.img-fluid{src: "{{ photo.file.url }}", style: "width: 120px;"}
-      {% endfor %}
-    {% endif %}
+    %h5.text-primary {{ property.address | remove: ", Vancouver, BC" }}
+    %a.mt-3{href: "/properties/{{ property._slug }}", style: "text-decoration: underline;"} Learn More
 {% endfor %}
 {% include 'pagination' with paginate %}
 {% endpaginate %}
-
 {% endblock %}
 
-{% block content/center_callout %}
-#map_canvas.mt-4
+
+{% block script %}
+:javascript
+  var delay = 100;
+  var infowindow = new google.maps.InfoWindow();
+  var latlng = new google.maps.LatLng(49.2827, -123.1207);
+  var mapOptions = {
+    zoom: 6,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var geocoder = new google.maps.Geocoder(); 
+  var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  var bounds = new google.maps.LatLngBounds();
+
+  function geocodeAddress(address, next) {
+    geocoder.geocode({address:address}, function (results,status)
+      { 
+         if (status == google.maps.GeocoderStatus.OK) {
+          var p = results[0].geometry.location;
+          var lat=p.lat();
+          var lng=p.lng();
+          createMarker(address,lat,lng);
+        }
+        else {
+           if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+            nextAddress--;
+            delay++;
+          } else {
+                        }   
+        }
+        next();
+      }
+    );
+  }
+  function createMarker(add,lat,lng) {
+   var contentString = add;
+   var marker = new google.maps.Marker({
+     position: new google.maps.LatLng(lat,lng),
+     icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+     map: map,
+           });
+
+  google.maps.event.addListener(marker, 'click', function() {
+     infowindow.setContent(contentString); 
+     infowindow.open(map,marker);
+   });
+
+   bounds.extend(marker.position);
+
+  }
+  var locations = [
+    {% for property in contents.properties %}
+    "{{ property.address }}",
+    {% endfor %}
+  ];
+  var nextAddress = 0;
+  function theNext() {
+    if (nextAddress < locations.length) {
+      setTimeout('geocodeAddress("'+locations[nextAddress]+'",theNext)', delay);
+      nextAddress++;
+    } else {
+      map.fitBounds(bounds);
+    }
+  }
+  theNext();
 {% endblock %}
 

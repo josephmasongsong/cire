@@ -1,22 +1,41 @@
-.slim-header, .fat-header {
-	position: relative;
-	h1 { 
-		color: #fff !important;
-	}
-	.container {
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  position: absolute;		
-	}
+.index-header {
+  height: calc(100vh - 117px);
+  width: 100%;
+  position: relative;
+  .header-container {
+    z-index: 2;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);    
+  }
+  img {
+  }
+  h1.display-4 {
+  }
+ .headline {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+  }
 }
+
+
 .slim-header {
-	min-height: 250px;
+	height: 350px;
 }
 .fat-header {
 	height: 600px;
 	h1 {
 		font-size: 3.5rem;
-    line-height: 1.2;		
+    	line-height: 1.2;		
 	}
+}
+
+.slim-header, .fat-header {
+	position: relative;
+	h1 { 
+		color: #fff !important;
+	}
+
 }

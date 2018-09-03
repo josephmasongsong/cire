@@ -1,0 +1,63 @@
+---
+title: Content type template
+listed: true
+published: true
+content_type: "properties"
+display_settings:
+  hidden: true          # hidden for authors?
+---
+{% extends layouts/sidebar %}
+
+
+{% block featured_image %}
+%section.bg-secondary.px-3.px-sm-5.slim-header{style: "background: url({{ property.photos.first.file.url }}) center center; background-size: cover;"}
+  %div{class: "overlay-with-gradient blue {% if property.photos.size > 0 %}transparent{% endif %}"}
+  .container
+    %div{style:"position:absolute;z-index:2;color: #fff !important; top:50%; transform: translateY(-50%);"}
+      %h1.mb-0.text-white {{ page.title | remove: ", Vancouver, BC" }}
+{% endblock %}
+
+{% block content/main %}
+
+{% if property.description %}
+%h5.text-primary.mb-4 Description
+.freetext
+  {{ property.description }}
+{% endif %}
+
+{% if property.photos.size > 0 %}
+%h5.text-primary.my-4 Photos
+.photo-list
+  {% for photo in property.photos %}
+  %a.js-smartPhoto{"data-caption" => "{{ photo.description }}", "data-group" => "{{ property.address }}", "data-id" => "photo", :href => "{{ photo.file.url }}"}
+    %img.img-fluid.w-25{src: "{{ photo.file.url }}"}
+  {% endfor %}
+{% endif %}
+
+.bg-light.p-4.mt-5
+  %h5.mb-4.text-primary {% editable_text "Contact subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}
+  %p.mb-0 
+    {% editable_text "Contact blurb", format: raw, rows: 4 %}
+    Please refer to the 
+    %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+    and the 
+    %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please 
+    %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
+    {% endeditable_text %}
+
+{% endblock %}
+
+{% block content/sidebar %}
+
+%h5.mb-4.ml-3.mt-5.mt-md-0.text-primary See More Units
+%nav.nav.flex-column.side-nav
+  {% for property in contents.properties limit: 4 %}
+  %a{class: "text-primary p-3 {% if page.slug == property._slug %}active{% endif %}", href: "{% path_to property %}" } {{ property.address | remove: ", Vancouver, BC" }}
+  {% endfor %}
+{% endblock %}
+
+{% block script %}
+{{ 'jquery-smartphoto.js' | javascript_tag }}
+{% endblock %}
+

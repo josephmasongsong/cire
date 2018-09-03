@@ -4,18 +4,24 @@ listed: true
 published: true
 position: 5
 ---
-{% extends layouts/contact %}
+{% extends layouts/sidebar %}
+
+
+{% block top_msg %}
+{% include top_callout %}
+{% endblock %}
 
 {% block content/sidebar %}
-%h5.mb-4.pl-3.py-2.text-primary{style: "border-left: 3px solid #DE8032;"} {% editable_text "sidebar header", format: raw, rows: 2 %}Still have questions?{% endeditable_text %}
-%p.mb-5 
-  {% editable_text "sidebar blurb", format: raw, rows: 3 %}
-  Please refer to the 
-  %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
-  and the 
-  %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
-  before contacting CIRE. If you still have questions and are interested in leasing one of our units please contact us.
-  {% endeditable_text %}
+.bg-light.p-4.mb-5.mt-5.mt-sm-0
+  %h5.mb-3.py-2.text-primary {% editable_text "sidebar header", format: raw, rows: 2 %}Still have questions?{% endeditable_text %}
+  %p.mb-0
+    {% editable_text "sidebar blurb", format: raw, rows: 3 %}
+    Please refer to the 
+    %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+    and the 
+    %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please contact us.
+    {% endeditable_text %}
 {% endblock %}
 
 {% block content/main %}

@@ -1,7 +1,7 @@
-%section.bg-secondary.px-5{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'neighbourhood.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover; height:350px;"}
-  .overlay-with-gradient.blue.transparent
+%section.bg-secondary.px-3.px-sm-5.slim-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'vancouver.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+  %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
   .container
-    %div{style:"position:absolute;z-index:2;color: #fff !important; top:50%; transform: translateY(-50%);"}
+    .center-v
       %h1.mb-1.text-white {{ page.title }}
       %p.lead.mb-0 
         {% editable_text "subheader", format: raw, rows: 2 %}

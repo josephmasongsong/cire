@@ -3,14 +3,8 @@ development:
   handle: fluttering-badlands-7295
   email: joseph@josephmasongsong.com
   api_key: 8bd7319e56c3d5b940ee9d3fd24f34181c4baa97
-# staging:
-#   host: staging.example.com
-#   email: john@doe.net
-#   password: apassword
-#   # api_key: <your api key here>
-# production:
-#   host: www.example.com
-#   email: john@doe.net
-#   password: apassword
-#   # api_key: <your api key here>
-#   # ssl: true
+production:
+  host: https://station.locomotive.works
+  handle: zealous-pebble-5812
+  email: joseph@josephmasongsong.com
+  api_key: b864fd21944a915f1c65eafa3cd1c7f2b6db8bdf

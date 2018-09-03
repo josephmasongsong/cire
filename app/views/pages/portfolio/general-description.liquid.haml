@@ -3,14 +3,11 @@ title: General Description
 listed: true
 published: true
 position: 1
-
 ---
 {% extends parent %}
-
 {% block 'content/main' %}
 {% endblock %}
-
-
 {% block 'content/center_callout' %}
-%div{style: "background: url({{ 'map.png' | theme_image_url }}) center center; background-size: cover; height:350px; width: 100%;"}
+%h3.text-primary.my-5 {% editable_text "Map", format: raw, rows: 1 %}Map of Impact Real Estate{% endeditable_text %}
+%div{style: "background: url({% capture image_url %}{% editable_file 'map_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center; background-size: cover; height:350px; width: 100%;"}
 {% endblock %}

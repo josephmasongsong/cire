@@ -9,13 +9,13 @@ display_settings:
 {% extends layouts/blank %}
 
 {% block top_msg %}
-{% include top_callout %}
+
 {% endblock %}
 
 {% block content/main %}
 .posts.row
   {% for post in contents.posts %}
-  .col-sm-4
+  .col-md-4.col-sm-6
     .post-listing.px-2.mb-5
       {% if post.featured_image.url %}
       .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
@@ -23,7 +23,7 @@ display_settings:
       .caption
         %h5.text-primary {{ post.title | escape }}
         .text-info.my-2 {{ post.posted_at | date: "%A, %B %d, %Y" }}
-        %p.teaser {{ post.teaser }}
+        %p.teaser.text-primary {{ post.teaser }}
         %a.text-underline{:href => "/posts/{{ post._slug }}"} Read More
   {% endfor %}
 {% endblock %}

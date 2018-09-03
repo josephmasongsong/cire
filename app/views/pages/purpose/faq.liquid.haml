@@ -6,8 +6,21 @@ position: 4
 ---
 {% extends 'layouts/sidebar' %}
 
-{% block content/main %}
+{% block content/sidecontent %}
+.bg-light.p-4.mb-5.mt-5.mt-sm-0
+  %h5.mb-4.text-primary {% editable_text "Sidebar subheader", format: raw, rows: 2 %}Question still not answered?{% endeditable_text %}
+  %p.mb-0 
+    {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
+    Please refer to the 
+    %a{href: "portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
+    and the 
+    %a{href: "portfolio/faq", style: "text-decoration:underline;"} frequently asked questions 
+    before contacting CIRE. If you still have questions please
+    %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
+    {% endeditable_text %}
+{% endblock %}
 
+{% block content/main %}
 #faq_accordion.accordion
   {% for question in contents.questions %}
   .card.border-0
@@ -18,7 +31,5 @@ position: 4
       .card-body.p-3
         %p.mb-0 {{ question.answer }}
   {% endfor %}
-
 {% endblock %}
-
 

@@ -6,56 +6,76 @@ handle: home
 {% extends 'layouts/default' %}
 
 {% block featured_image %}
-%header.featured-image-large.callout-wide.homepage{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
+.index-header{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
   .overlay-with-gradient.blue.transparent
-  .container.home-text
-    %h1.mb-4.display-4.font-weight-bold.text-white
-      {% editable_text "pageheader", format: raw, rows: 2 %}
-      Healthy, Empowered 
-      %br
-      Communities
-      {% endeditable_text %}
-    %p.lead.mb-0.text-white 
-      {% editable_text "pagesubheader", format: raw, rows: 2 %}
-      Capacity building challenges and opportunities improve the world
-      %br
-      impact shared unit of analysis progress B-corp emerging.
-      {% endeditable_text %}
+  .container.center-vh
+    .row
+      .col-md-8
+        %h1.mb-2.mb-sm-3.display-4.font-weight-bold.text-white
+          {% editable_text "pageheader", format: raw, rows: 2 %}
+          Healthy, Empowered 
+          %br
+          Communities
+          {% endeditable_text %}
+        %p.mb-0.text-white.lead
+          {% editable_text "pagesubheader", format: raw, rows: 2 %}
+          Capacity building challenges and opportunities improve the world
+          %br
+          impact shared unit of analysis progress B-corp emerging.
+          {% endeditable_text %}
 {% endblock %}
 
 {% block content %}
 
-%section.bg-white
+%section
   .container
     .row
-      .col-sm-10.mx-auto 
-        %h3.text-center.mb-4.text-primary {% editable_text "subheader", format: raw, rows: 2 %} What We Do {% endeditable_text %}
+      .col-md-10.mx-auto 
         %p.mb-0.lead.text-center {% editable_text "statement", format: raw, rows: 4 %} Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social service support and employment opportunities for the residents in the communities within which we work. {% endeditable_text %}
-
     %hr.section-divider
 
     .row
-      .col-sm-4
+      .col-md-4.mb-4.mb-sm-0
         .feature-column-content.px-3
           %h5.mb-3.text-primary {% editable_text "Col 1 Header", format: raw, rows: 1 %}Purpose{% endeditable_text %}
           %p.mb-3  {% editable_text "col 1 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
           %a.text-underline{:href => "/purpose"} Read More
-      .col-sm-4
+      .col-md-4.mb-4.mb-sm-0
         .feature-column-content.px-3
           %h5.mb-3.text-primary {% editable_text "Col 2 Header", format: raw, rows: 1 %}Portfolio{% endeditable_text %}
           %p.mb-3  {% editable_text "col 2 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
           %a.text-underline{:href => "/portfolio"} Read More
-      .col-sm-4
+      .col-md-4
         .feature-column-content.px-3
           %h5.mb-3.text-primary {% editable_text "Col 3 Header", format: raw, rows: 1 %}People{% endeditable_text %}
           %p.mb-3  {% editable_text "col 3 blurb", format: raw, rows: 3 %}Social intrapreneurship dynamic, social entrepreneurship, strengthening infrastructure social intrapreneurship capacity building philanthropy.{% endeditable_text %}
           %a.text-underline{:href => "/people"} Read More
+.container-fluid.px-0
+  .row.no-gutters
+    .col-md-6
+      .overlay-with-gradient.blue.text-white{style: "height: 500px;"}
+        .row.center-v
+          .col-xl-8.col-lg-10.ml-auto.pr-5.mr-5
+            %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %} What is CIRES?{% endeditable_text %}
+            %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %} CIRES is a non-profit social enterprise designed to operate a balanced commercial property portfolio that:{% endeditable_text %}
+            .media.mb-2
+              %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+              .media-body
+                %p.font-weight-light {% editable_text "Callout bullet 1", format: raw, rows: 3 %} Intentionally leases space for uses that will ensure affordable goods, services and supports are available and accessible to low income residents{% endeditable_text %}
+            .media.mb-2
+              %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+              .media-body
+                %p.font-weight-light {% editable_text "Callout bullet 2", format: raw, rows: 3 %} Operates a financially sustainable portfolio{% endeditable_text %}
+            .media
+              %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+              .media-body
+                %p.font-weight-light {% editable_text "Callout bullet 3", format: raw, rows: 3 %} Assists and supports the development and growth of social enterprises that are inner city job creators{% endeditable_text %}
+    .col-md-6
+      .img-container.w-100{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center no-repeat; background-size: cover; height: 500px;"}
 
-
-
-{% include newsletter_signup %}  
 
 {% include news_list %}
+
 
 {% endblock %}
 

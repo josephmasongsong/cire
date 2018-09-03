@@ -1,15 +1,16 @@
 %section
   .container
-    %h3.mb-5.text-primary Latest Updates
+    %h4.mb-5.text-primary Latest Updates
     .posts.row
       {% for post in contents.posts limit: 3 %}
-      .col-sm-4
-        .post-listing.px-2
+      .col-sm-6.col-md-4
+        .post-listing.px-2.mb-0
           {% if post.featured_image.url %}
           .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
           {% endif %}
           .caption
-            %h5.text-primary {{ post.title | escape }}
+            %h5.text-primary.mb-2 {{ post.title | escape }}
+            .text-info.mb-3 {{ post.posted_at | date: "%A, %B %d, %Y" }}
             %p.teaser {{ post.teaser }}
             %a.text-underline{:href => "/posts/{{ post._slug }}"} Read More
       {% endfor %}

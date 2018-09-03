@@ -87,3 +87,10 @@ fields:
     class_name: photos # Define the slug of the target content type (eg. comments)
     inverse_of: property  # Define the name of the field referring to Tests in the target content type
     ui_enabled: true # If you want to manage the entries of the relationship directly from the source entry
+
+- tags: # The lowercase, underscored name of the field
+    label: Tags # Human readable name of the field
+    type: tags
+    required: false
+    hint: Tags for categorization
+    localized: false

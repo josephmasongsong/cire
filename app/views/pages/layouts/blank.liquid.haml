@@ -8,13 +8,12 @@ is_layout: true
 {% include slim_header %}
 {% endblock %}
 
-
 {% block content %}
 %section
   .container
-    {% block main %}
-    {% endblock %}
     .freetext
       {% editable_text "Freetext", rows: 10 %}
       {% endeditable_text %}
+      {% block main %}
+      {% endblock %}
 {% endblock %}

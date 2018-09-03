@@ -6,7 +6,7 @@ is_layout: true
 {% extends layouts/default %}
 
 {% block top_msg %}
-{% include top_callout %}
+
 {% endblock %}
 
 {% block featured_image %}
@@ -17,17 +17,19 @@ is_layout: true
 %section
   .container
     .row
-      .col-sm-8.mr-auto
+      .col-md-8.mr-auto
+        {% block freetext %}
         .freetext
           {% editable_text "Freetext", rows: 10 %}
           {% endeditable_text %}
+        {% endblock %}
         {% block main %}
         {% endblock %}
         {% block list %}
         {% endblock %}
-      .col-sm-4
+      .col-md-4
         .row
-          .col-sm-10.mx-auto
+          .col-md-10.mx-auto
             {% block sidecontent %}
             {% endblock %}
             {% block sidebar %}

@@ -1,0 +1,84 @@
+.newsletter-signup {
+	height: 300px;
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (max-width: 991.98px) { 
+
+}
+
+@media (max-width: 767.98px) { 
+	.container {
+		max-width: initial;
+	}	
+	body section .lead {
+		font-size: 1rem;
+	}
+	body section hr.section-divider {
+	    margin: 3.5rem 0;
+	}
+
+	.display-4 {
+		font-size: 2rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+	}
+	.feature-column-content {
+		p, a {
+			font-size: 1rem;
+		}
+	}
+	.fat-header {
+		h1 {
+			font-size: 2.5rem;
+		}		
+	}
+	.featured-image-large {
+		height: 500px;
+		h1 {
+			font-size: 2.5rem;
+		}
+		.lead {
+			font-size: 1rem;
+		}
+	}
+	.navbar-brand img {
+		width: 200px !important;
+	}
+	.fat-header, .slim-header, .index-header {
+		height: 300px;
+	}
+	.slim-header {
+		h1 {
+			font-size: 2rem;
+		}
+	}
+	.freetext.lead {
+		font-size: 1rem;
+	}
+	h3.teaser-text {
+		font-size: 1.5rem;
+	}
+	.newsletter-signup {
+		height: 500px;
+		h3 {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 1rem;
+		}
+		.form-control {
+			margin-bottom: 1rem;
+		}
+		button {
+			width: 100% !important;
+		}
+	}	
+	section {
+		padding: 3.5rem 0;
+	}
+}

@@ -1,5 +1,5 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-2.p-sm-0.main-nav
-  .container
+%nav.navbar.navbar-expand-lg.navbar-light.bg-white.px-2.p-sm-0.main-nav.large-nav.fixed-top
+  .container.p-0
     %a.navbar-brand.m-0.p-0{href: "{% path_to home %}"}
       %img{src: "{{ 'CommImpactLogo_standard.png' | theme_image_url }}"}
     %button.hamburger.hamburger--collapse.d-block.d-lg-none{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
@@ -16,7 +16,7 @@
             %span {{ page_in_nav.title }}       
           .dropdown-menu.p-0.rounded-0.border-0
             {% for child in page_in_nav.children %}
-            %a.dropdown-item.p-3.text-primary{:href => "{% path_to child %}"} {{ child.title }}
+            %a.dropdown-item.p-3{:href => "{% path_to child %}"} {{ child.title }}
             {% endfor %}
         {% else %}
         %li.nav-item
@@ -26,6 +26,3 @@
         {% endif %}
         {% endif %}
         {% endfor %}
-
-
-

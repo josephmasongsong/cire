@@ -9,19 +9,22 @@ display_settings:
 {% extends 'layouts/news' %}
 
 {% block featured_image %}
-%section.bg-secondary.px-5{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ post.featured_image.url }}{% endif %}) center center; background-size: cover; height:350px;"}
-  .overlay-with-gradient.blue.transparent
-  .container
-    .row{style:"position:absolute;z-index:2;color: #fff !important; top:50%;  transform: translateY(-50%);"}
-      .col-sm-9
-        %h1.mb-2.text-white {{ page.title }}
-        %p.lead.mb-0 
-          {{ post.posted_at | date: "%A, %B %d, %Y" }}
+%section.bg-secondary.px-3.px-sm-5.slim-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ post.featured_image.url }}{% endif %}) center center; background-size: cover;"}
+  %div{class: "overlay-with-gradient blue {% if post.featured_image.url %}transparent{% endif %}"}
+  .container.center-vh
+    .row
+      .col-lg-9
+        %div.text-white
+          %h1.mb-1 {{ page.title }}
+          %p.lead.mb-0 
+            {{ post.posted_at | date: "%A, %B %d, %Y" }}
 {% endblock %}
 
 {% block 'content/main' %}
-%h3.text-primary.mb-4 {{ post.teaser }}
-.freetext.lead.mb-4
+{% if post.teaser %}
+%h3.teaser-text.text-primary.mb-4 {{ post.teaser }}
+{% endif %}
+.freetext.mb-4
   {{ post.body }}
 {% if post.tags %}
 {% for tag in post.tags %}
@@ -32,7 +35,7 @@ display_settings:
 
 
 {% block content/sidebar %}
-%h5.mb-4.pl-3.py-2.text-primary{style: "border-left: 3px solid #DE8032;"} News Updates
+%h5.mb-4.ml-3.mt-5.mt-md-0.text-primary Latest Updates
 %nav.nav.flex-column.side-nav
   {% for post in contents.posts %}
   %a{class: "text-primary p-3 {% if post._slug == page.slug %}active{% endif %}", href: "{% path_to post %}" } {{ post.posted_at | date: "%B %d, %Y" }}

@@ -3,56 +3,61 @@
 @import "simple-line-icons.css";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
 @import "overlays_gradients";
+@import "navigation";
 @import "headers";
-@import "slants";
 
-.smartphoto, .smartphoto-header {
-  background-color: $brand-blue-dark;
+body {
+  font-weight: 300;
 }
 
 #wrapper {
   overflow-x:hidden;
 }
 
-body {
-  background: linear-gradient(to right, rgba(white, 1) 0%, rgba($brand-blue-light, 0.125) 100%);
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.pad-top {
+  padding-top: 116px;
+}
+
+.sidebar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-right: 1px solid #f0f0f0;
+}
 
 a:hover {
   text-decoration: none;
 }
 
-.card {
-  background-color: transparent !important;
+.smartphoto, .smartphoto-header {
+  background-color: $brand-blue-dark;
 }
 
-header.homepage {
-}
-  h1,h2,h3,h4,h5,h6 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  }
-.bg-primary {
-  h1,h2,h3,h4,h5,h6, a, p, ul, li {
-    color: #fff;
-  }
+.lead {
+  font-size: 1.125rem;
 }
 
-.nav-item:hover, a.text-primary:hover, a.text-primary:focus {
-  color: $brand-blue-medium;
+a.text-underline {
+  text-decoration: underline;
+}      
+.hamburger-box {
+  top: 5px;
 }
-
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  background-color: $brand-blue-medium;
+}
 section {
   position: relative;
   padding: 5rem 0;
-  font-weight: 300;
-  span.ln {
-    color: $brand-blue-dark;
-  }
   hr.section-divider {
-    margin: 5rem 0;
-  }
-  .lead {
-    font-size: 1.125rem;
+    margin: 4rem 0;
   }
   p {
     line-height: 1.8;
@@ -66,45 +71,20 @@ section {
       font-size: 2rem;
     }  
   }
-  .feature-column-content, .caption {
-    a.text-underline {
-      text-decoration: underline;
-    }      
+}
+
+.criteria i {
+  font-size: 2rem;
+}
+
+.freetext {
+  line-height: 1.8;
+  h1,h2,h3,h4,h5,h6 {
+    color: $brand-blue-dark;
+    margin-bottom: 1.25rem;
   }
-  .feature-column-content.bg-primary, .feature-column-content.bg-secondary, .feature-column-content.bg-info, .feature-column-content.bg-warning, {
-    position: relative;
-    span, h5, p, a {
-      position: relative;
-      z-index: 3;
-    }
-  }
-}
-}
-.media.mb-4.pb-2.border-bottom:last-child {
-  border-bottom: 0 !important;
-}
-.property-thumbnail {
-  float: left;
-}
-
-.posts {
-  .featured-image {
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-
-  }
-}
-
-.dropdown-toggle::after {
-  content: none;
-}
-.dropdown-menu {
-  margin: 0;
-  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
-}
-
-#accordionExample {
-  .border-bottom {
-    border-bottom: 1px solid #f0f0f0 !important;
+  img {
+    max-width: 100%;
   }
 }
 
@@ -113,182 +93,31 @@ section {
   height: 350px;
 }
 
-#property-list {
-  height: 475px;
-  overflow: scroll;
-}
-
-a.collapsed, .card-header a {
-  font-weight: normal;
-}
-
-.box-shadow {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) !important;
-}
-
 .border-bottom {
-  border-bottom: 1px solid #f0f0f0 !important;
-}
-.side-nav a {
-  font-size: 1rem;
-  &:hover {
-    background-color: #f8f9fa;
-    text-decoration: none;
-  }
+  border-bottom: 1px solid #f8f9fa !important;
 }
 
-.side-nav a.active {
-  font-weight: 500;
-    background-color: #f8f9fa;
-
-  border-left: 3px solid #DE8032;
+.center-v {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;  
 }
-.side-nav a:last-child {
-  border-bottom: 0 !important;
+.center-h {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;  
 }
-.main-nav {
-  a.nav-link {
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    padding: 2.2rem 0rem;
-    &.active, &:hover {
-      border-bottom: 4px solid #DE8032;
-      span {
-      }
-    }
-    &:hover {
-      color: $brand-blue-medium !important;
-
-    }
-    &.active {
-      font-weight: 500;
-    }
-  }  
-}
-
-.sidebar:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    border-right: 1px solid #f0f0f0;
-}
-
-.top-nav {
-  a {
-    &:hover {
-      background-color: #80a5b4;
-    }
-    &.active {
-      background-color: #076F96;
-      font-family: 'Avenir';
-      font-weight: bold;
-    }
-  }
-}
-
-.top-nav-alt {
-  a {
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    &.active {
-      font-weight: bold;
-    }
-  }
-}
-
-.nav-full {
-  a {
-    &.active {
-      font-weight: bold;
-    }
-    &:last-child {
-      border-right: 0 !important;
-    }
-  }  
-}
-
-.colorbox, .goalbox {
-
-  clear:both;
-  span.ln {
-    font-size: 4rem;
-  }
-  i {
-    font-size: 2rem;
-  }
-}
-
-.featured-image {
-  height: 300px;
-  width: 100%;
-  position: relative;
-  .header-container {
-
-  }
-  h1.display-4 {
-    z-index: 2;
-    position: relative;
-    position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);
-  }
- .headline {
-    position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);
-    z-index: 3;
-
-  }
-}
-
-.image-grid {
-  width: 100%;
-  position: relative;
-}
-
-.featured-image-large {
-  height: 800px;
-  width: 100%;
-  position: relative;
-  .header-container {
-    z-index: 2;
-    position: absolute;
-    bottom: 50%;
-    transform: translateY(50%);    
-  }
-  img {
-  }
-  h1.display-4 {
-  }
- .headline {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
-}
-
-.callout-box-small {
-  p, h3 {
-    position: relative;
-    z-index: 3;
-  }
-}
-
-.callout-wide .container.home-text {
+.center-vh {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
-}
-
-
-.dropdown:hover>.dropdown-menu {
+  position: absolute;  
 }
 
 .footer {
+  a {
+    color: #fff;
+  }
   a:hover {
     color: $brand-orange-medium;
   }
@@ -296,14 +125,6 @@ a.collapsed, .card-header a {
   }  
 }
 
-.freetext {
-  h1,h2,h3,h4,h5,h6 {
-    color: $brand-blue-dark;
-  }
-  img {
-    max-width: 100%;
-  }
-}
 
 .form .form-control {
     padding: 0.75rem 1rem;
@@ -330,3 +151,5 @@ a.collapsed, .card-header a {
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: white !important;
 }
+
+@import "responsive";

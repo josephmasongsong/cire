@@ -12,23 +12,17 @@ is_layout: true
 
 
 {% block content %}
-
-.pt-5.pb-0
-  .container
-    %nav.nav.nav-fill.mb-0.nav-full
-      {% for child in page.parent.children %}
-      %a{class: "py-1 border-right nav-item {% if child.fullpath == page.fullpath %}active{% endif %}", href: "{% path_to child %}" } {{ child.title }}
-      {% endfor %}
-
 %section
   .container
     {% block main %}
     {% endblock %}
     {% block fullwidth %}
     {% endblock %}
+    {% block freetext %}
+    .freetext
+      {% editable_text "Freetext", rows: 10 %}
+      {% endeditable_text %}
+    {% endblock %}
 {% endblock %}
 
-{% block callout %}
-{% include newsletter_signup %}
-{% endblock %}
 

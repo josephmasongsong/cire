@@ -12,8 +12,8 @@ position: 3
 {% block content/list %}
 
 {% for criterion in contents.criteria %}
-.goalbox.media
-  %i.icon-check.text-primary.mr-4
+.media.criteria
+  %i.icon-check.align-self-top.text-primary.mr-4
   .media-body
     %h4.mb-4.text-primary {{ criterion.title }}
     %p.mb-4 {{ criterion.body }}
