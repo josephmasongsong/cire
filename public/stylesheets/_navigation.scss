@@ -79,6 +79,9 @@
 .dropdown-item:hover, .dropdown-item:focus {
   background-color: $brand-orange-medium;
 }
+a.dropdown-item.text-primary:hover, a.dropdown-item.text-primary:focus {
+  color: #fff !important;
+}
 
 
 

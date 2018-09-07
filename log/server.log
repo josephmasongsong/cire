@@ -338,3 +338,9 @@ I, [2018-09-02T20:04:05.853161 #95291]  INFO -- : Listening on 0.0.0.0:3333, CTR
 I, [2018-09-03T13:11:52.688442 #3091]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
 I, [2018-09-03T13:11:52.688563 #3091]  INFO -- : Maximum connections set to 1024
 I, [2018-09-03T13:11:52.688593 #3091]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-09-06T15:42:13.955539 #3511]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-09-06T15:42:13.956177 #3511]  INFO -- : Maximum connections set to 1024
+I, [2018-09-06T15:42:13.956238 #3511]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop
+I, [2018-09-07T09:24:25.085712 #1587]  INFO -- : Thin web server (v1.7.2 codename Bachmanity)
+I, [2018-09-07T09:24:25.085819 #1587]  INFO -- : Maximum connections set to 1024
+I, [2018-09-07T09:24:25.085848 #1587]  INFO -- : Listening on 0.0.0.0:3333, CTRL+C to stop

@@ -7,22 +7,23 @@ handle: home
 
 {% block featured_image %}
 .index-header{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
-  .overlay-with-gradient.blue.transparent
+  .overlay-with-gradient.blue
   .container.center-vh
     .row
-      .col-md-8
-        %h1.mb-2.mb-sm-3.display-4.font-weight-bold.text-white
-          {% editable_text "pageheader", format: raw, rows: 2 %}
-          Healthy, Empowered 
-          %br
-          Communities
-          {% endeditable_text %}
-        %p.mb-0.text-white.lead
-          {% editable_text "pagesubheader", format: raw, rows: 2 %}
-          Capacity building challenges and opportunities improve the world
-          %br
-          impact shared unit of analysis progress B-corp emerging
-          {% endeditable_text %}
+      .col-md-8.mx-auto
+        %img.img-fluid{src: "{{ 'CommImpactLogo_standard_SolidWhite.png' | theme_image_url }}"}
+        / %h1.mb-2.mb-sm-3.display-4.font-weight-bold.text-primary
+        /   {% editable_text "pageheader", format: raw, rows: 2 %}
+        /   Healthy, Empowered 
+        /   %br
+        /   Communities
+        /   {% endeditable_text %}
+        / %p.mb-0.text-primary.lead
+        /   {% editable_text "pagesubheader", format: raw, rows: 2 %}
+        /   Capacity building challenges and opportunities improve the world
+        /   %br
+        /   impact shared unit of analysis progress B-corp emerging
+        /   {% endeditable_text %}
 {% endblock %}
 
 {% block content %}
@@ -56,23 +57,24 @@ handle: home
       .callout-text.text-white
         .overlay-with-gradient.blue
           .row.center-v
-            .col-xl-8.col-lg-10.ml-md-auto.pr-md-5
-              %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %} What is CIRES?{% endeditable_text %}
-              %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %} CIRES is a non-profit social enterprise designed to operate a balanced commercial property portfolio that:{% endeditable_text %}
-              .media.mb-2
-                %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
-                .media-body
-                  %p.font-weight-light {% editable_text "Callout bullet 1", format: raw, rows: 3 %} Intentionally leases space for uses that will ensure affordable goods, services and supports are available and accessible to low income residents{% endeditable_text %}
-              .media.mb-2
-                %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
-                .media-body
-                  %p.font-weight-light {% editable_text "Callout bullet 2", format: raw, rows: 3 %} Operates a financially sustainable portfolio{% endeditable_text %}
-              .media
-                %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
-                .media-body
-                  %p.font-weight-light {% editable_text "Callout bullet 3", format: raw, rows: 3 %} Assists and supports the development and growth of social enterprises that are inner city job creators{% endeditable_text %}
+            .col-xl-8.col-lg-10.ml-md-auto
+              .px-5.pl-md-0.pr-md-5
+                %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %} What is CIRES?{% endeditable_text %}
+                %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %} CIRES is a non-profit social enterprise designed to operate a balanced commercial property portfolio that:{% endeditable_text %}
+                .media.mb-2
+                  %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+                  .media-body
+                    %p.font-weight-light {% editable_text "Callout bullet 1", format: raw, rows: 3 %} Intentionally leases space for uses that will ensure affordable goods, services and supports are available and accessible to low income residents{% endeditable_text %}
+                .media.mb-2
+                  %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+                  .media-body
+                    %p.font-weight-light {% editable_text "Callout bullet 2", format: raw, rows: 3 %} Operates a financially sustainable portfolio{% endeditable_text %}
+                .media
+                  %i.icon-check.align-self-top.mr-3.mt-2{style: "font-size: 1.5rem;"}
+                  .media-body
+                    %p.font-weight-light {% editable_text "Callout bullet 3", format: raw, rows: 3 %} Assists and supports the development and growth of social enterprises that are inner city job creators{% endeditable_text %}
     .col-md-6
-      .img-container.w-100{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center no-repeat; background-size: cover; height: 500px;"}
+      .img-container.w-100{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center no-repeat; background-size: cover;"}
 
 
 {% include news_list %}
