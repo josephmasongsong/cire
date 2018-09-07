@@ -1,4 +1,5 @@
 /public/images/
 /public/fonts/
 /public/samples/
+/config/deploy.yml
 .DS_Store
