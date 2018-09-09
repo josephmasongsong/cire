@@ -21,7 +21,7 @@ display_settings:
       .featured-image.mb-3{style: "background: url({{ post.featured_image.url }}) center center; background-size: cover; height: 200px;"}
       {% endif %}
       .caption
-        %h5.text-primary {{ post.title | escape }}
+        %h5.text-primary.mb-0 {{ post.title | escape }}
         .text-info.my-2 {{ post.posted_at | date: "%A, %B %d, %Y" }}
         %p.teaser.text-primary {{ post.teaser }}
         %a.text-underline{:href => "/posts/{{ post._slug }}"} Read More
