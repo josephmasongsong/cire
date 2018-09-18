@@ -24,7 +24,7 @@ position: 4
 #faq_accordion.accordion
   {% for question in contents.questions %}
   .card.border-0
-    #headingOne.card-header.border-bottom.py-3{id: "heading-{{ question._slug }}"}
+    #headingOne.card-header.border-bottom.py-3.bg-light{id: "heading-{{ question._slug }}"}
       %p.mb-0
         %a.collapsed.mb-0{"aria-controls" => "collapseOne", "aria-expanded" => "true", "data-target" => "#collapse-{{ question._slug }}", "data-toggle" => "collapse", href: "#"} {{ question.title }}
     .collapse{"aria-labelledby" => "heading-{{ question._slug }}", "data-parent" => "#faq_accordion", id: "collapse-{{ question._slug }}"}

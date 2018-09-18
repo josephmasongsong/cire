@@ -9,6 +9,13 @@ is_layout: false
     %meta{charset: "utf-8"}
     %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}
+    {% block og %}
+    %meta{:property => "og:title", :content => "Our Mission"}/
+    %meta{:property => "og:site_name", :content => "Community Impact Real Estate Society"}/
+    %meta{:property => "og:url", :content => "{% path_to home %}"}/
+    %meta{:property => "og:image", :content => "{{ 'dibeppe-corner.jpg' | theme_image_url }}"}/
+    %meta{:property => "og:description", :content => "Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work."}/
+    {% endblock %}
     %title {{ site.name }}
     %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.2.0/css/all.css", :integrity => "sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ", :rel => "stylesheet"}/
     %link{:href => "https://unpkg.com/smartphoto@1.1.0/css/smartphoto.min.css", :rel => "stylesheet"}/

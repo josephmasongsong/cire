@@ -6,8 +6,8 @@ handle: home
 {% extends 'layouts/default' %}
 
 {% block featured_image %}
-.index-header{style: "background: url({{ 'dtvan.jpg' | theme_image_url }}) center center; background-size: cover;"}
-  .overlay-with-gradient.blue
+.index-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dibeppe-corner.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+  %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
   .container.center-vh
     .row
       .col-md-8.mx-auto

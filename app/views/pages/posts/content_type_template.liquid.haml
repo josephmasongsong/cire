@@ -8,6 +8,14 @@ display_settings:
 ---
 {% extends 'layouts/news' %}
 
+{% block og %}
+%meta{:property => "og:title", :content => "{{ post.title }}"}/
+%meta{:property => "og:site_name", :content => "Community Impact Real Estate Society"}/
+%meta{:property => "og:url", :content => "{{ page.fullpath }}"}/
+%meta{:property => "og:image", :content => "{{ post.featured_image.url }}"}/
+%meta{:property => "og:description", :content => "{{ post.teaser }}"}/
+{% endblock %}
+
 {% block featured_image %}
 %section.bg-secondary.px-3.px-sm-5.slim-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ post.featured_image.url }}{% endif %}) center center; background-size: cover;"}
   %div{class: "overlay-with-gradient blue {% if post.featured_image.url %}transparent{% endif %}"}
@@ -38,6 +46,6 @@ display_settings:
 %h5.mb-4.ml-3.mt-5.mt-md-0.text-primary Latest Updates
 %nav.nav.flex-column.side-nav
   {% for post in contents.posts %}
-  %a{class: "text-primary p-3 {% if post._slug == page.slug %}active{% endif %}", href: "{% path_to post %}" } {{ post.posted_at | date: "%B %d, %Y" }}
+  %a{class: "text-primary p-3 {% if post._slug == page.slug %}active{% endif %}", href: "{% path_to post %}" } {{ post.posted_at | date: "%m/%d/%Y" }}
   {% endfor %}
 {% endblock %}
