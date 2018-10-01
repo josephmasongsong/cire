@@ -13,7 +13,7 @@ display_settings:
 %meta{:property => "og:site_name", :content => "Community Impact Real Estate Society"}/
 %meta{:property => "og:url", :content => "{{ page.fullpath }}"}/
 %meta{:property => "og:image", :content => "{{ post.featured_image.url }}"}/
-%meta{:property => "og:description", :content => "{{ post.teaser }}"}/
+%meta{:property => "og:description", :content => "{{ post.teaser | strip_html }}"}/
 {% endblock %}
 
 {% block featured_image %}
@@ -22,7 +22,7 @@ display_settings:
   .container.center-vh
     .row
       .col-lg-9
-        %div.text-white
+        %div.text-white.wow.fadeIn
           %h1.mb-1 {{ page.title }}
           %p.lead.mb-0 
             {{ post.posted_at | date: "%A, %B %d, %Y" }}

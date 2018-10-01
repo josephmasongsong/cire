@@ -5,6 +5,14 @@ published: true
 position: 1
 ---
 {% extends parent %}
+{% block content/freetext %}
+.freetext
+  %p CIRE’s current portfolio consists of 52 commercial units in 24 buildings in Vancouver’s inner city for a total of 104,000 square feet. Most of the buildings are mixed use with commercial retail space on the ground floor and social housing above. Three are solely commercial buildings.
+
+  %p About 60% of the commercial units are leased below market rates to social enterprises and non-profit organizations.
+
+  %p For details and information on vacancies, please see details at available units.
+{% endblock %}
 {% block 'content/main' %}
 {% endblock %}
 {% block 'content/center_callout' %}

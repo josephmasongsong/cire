@@ -2,9 +2,10 @@
   %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
   .container
     .center-v
-      %h1.mb-1.text-white {{ page.title }}
-      %p.lead.mb-0 
-        {% editable_text "subheader", format: raw, rows: 2 %}
-        Insert snazzy catchy subheader here
-        {% endeditable_text %}
+      .wow.fadeIn
+        %h1.mb-1.text-white {{ page.title }}
+        %p.lead.mb-0 
+          {% editable_text "subheader", format: raw, rows: 2 %}
+          Insert snazzy catchy subheader here
+          {% endeditable_text %}
 

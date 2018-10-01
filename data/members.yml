@@ -1,31 +1,111 @@
 - David LePage:
     _slug: david-lepage
     name: David LePage
-    bio: Or social intrapreneurship, deep dive and shared unit of analysis parse social
-      entrepreneur benefit corporation initiative. Catalyze, systems thinking preliminary
-      thinking unprecedented challenge strengthening infrastructure. Or social intrapreneurship,
-      deep dive and shared unit of analysis parse social entrepreneur benefit corporation
-      initiative.
-    title: Director
+    bio: Responsible for policy and governance. 
+    title: Executive Director
     tags:
-    - board
+    - staff
 - Shaugn Schwartz:
     _slug: shaugn-schwartz
     name: Shaugn Schwartz
-    bio: AOr social intrapreneurship, deep dive and shared unit of analysis parse
-      social entrepreneur benefit corporation initiative. Catalyze, systems thinking
-      preliminary thinking unprecedented challenge strengthening infrastructure. Or
-      social intrapreneurship, deep dive and shared unit of analysis parse social
-      entrepreneur benefit corporation initiative.
-    title: Operations
+    bio: Responsible for enterprise operations, lease compliance and property management, human resources, financial and information management.
+    title: Managing Director
     tags:
-    - advisory
+    - staff
 - Yazmin Machuca:
     _slug: yazmin-machuca
     name: Yazmin Machuca
-    bio: Or social intrapreneurship, deep dive and shared unit of analysis parse social
-      entrepreneur benefit corporation initiative. Catalyze, systems thinking preliminary
-      thinking unprecedented challenge strengthening infrastructure. Or social intrapreneurship,
-      deep dive and shared unit of analysis parse social entrepreneur benefit corporation
-      initiative.
-    title: Assistant
+    bio: Responsible for commercial property administration, providing support services, helping with marketing efforts, managing the website & social media and general office management.
+    title: Administrator - Property and Office Services
+    tags:
+    - staff
+- Doina Gavra:
+    _slug: doina-gavra
+    name: Doina Gavra
+    title: Senior Property Manager
+    tags:
+    - property
+- Milan Przulj:
+    _slug: milan-przulj
+    name: Milan Przulj
+    title: Property Manager
+    tags:
+    - property
+- Razi Muhammed:
+    _slug: razi-muhammed
+    name: Razi Muhammed
+    title: Leasing Agent
+    tags:
+    - property
+- Mary Clare Zak:
+    _slug: mary-clare-zak
+    name: Mary Clare Zak
+    bio: City of Vancouver, Managing Director of Social Policy
+    title: Director
+    tags:
+    - board
+- Craig Crawford:
+    _slug: craig-crawford
+    name: Craig Crawford
+    bio: BC Housing, Vice-President of Operations
+    title: Director
+    tags:
+    - board
+- Irene Gannitsos:
+    _slug: irene-gannitsos
+    name: Irene Gannitsos
+    bio: Vancouver Community Foundation, Manager of Strategic Programs
+    title: Director
+    tags:
+    - board
+- Marcie Good:
+    _slug: marcie-good
+    name: Marcie Good
+    bio: Anhart Community Housing Society, Communications and Engagement
+    title: Advisor
+    tags:
+    - advisory
+- Sean Condon:
+    _slug: sean-condon
+    name: Sean Condon
+    bio: Vancity Community Foundation, Development Advisor - Social Enterprise
+    title: Advisor
+    tags:
+    - advisory
+- Herman Mah:
+    _slug: herman-mah
+    name: Herman Mah
+    bio: BC Housing, Real Estate Asset Manager
+    title: Advisor
+    tags:
+    - advisory
+- Nick Marini:
+    _slug: nick-marini
+    name: Nick Marini
+    bio:  MacDonald Commercial Real Estate, VP General Manager of Property Management
+    title: Advisor
+    tags:
+    - advisory
+- Steve Johnston:
+    _slug: steve-johnston
+    name: Steve Johnston
+    bio:  Exchange Inner City, Executive Director
+    title: Advisor
+    tags:
+    - advisory
+- Wes Regan:
+    _slug: wes-regan
+    name: Wes Regan
+    bio:   City of Vancouver, Community Economic Development Planner
+    title: Advisor
+    tags:
+    - advisory
+- Brennan Fitzgerald:
+    _slug: brennan-fitzgerald
+    name: Brennan Fitzgerald
+    bio: Hastings Crossing Business Improvement Association
+    title: Advisor
+    tags:
+    - advisory
+
+

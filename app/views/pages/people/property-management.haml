@@ -1,8 +1,8 @@
 ---
-title: Staff
+title: Property Management
 listed: true
 published: true
-position: 1
+position: 2
 ---
 {% extends parent %}
 
@@ -10,11 +10,11 @@ position: 1
 
 {% for member in contents.members %}
 {% if member.tags %}
-{% if member.tags contains "staff" %}
+{% if member.tags contains "property" %}
 .media
   .media-body
     %h4.mb-3.text-primary 
-      {{member.name}} - 
+      {{member.name}} -
       %small {{member.title}}
     %p.mb-4 {{member.bio}}
 {% endif %}

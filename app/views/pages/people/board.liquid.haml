@@ -2,7 +2,7 @@
 title: Board of Directors
 listed: true
 published: true
-position: 2
+position: 3
 
 ---
 {% extends parent %}
@@ -15,7 +15,7 @@ position: 2
 .media
   .media-body
     %h4.mb-4.text-primary 
-      {{member.name}}
+      {{member.name}} -
       %small {{member.title}}
     %p.mb-4 {{member.bio}}
 {% endif %}

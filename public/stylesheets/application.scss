@@ -1,3 +1,4 @@
+@import "animate.css";
 @import "custom_variables";
 @import "linearicons.css";
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700');
@@ -81,6 +82,9 @@ section {
 
 .freetext {
   line-height: 1.8;
+  p {
+    font-size: 1.125rem;
+  }
   h1,h2,h3,h4,h5,h6 {
     color: $brand-blue-dark;
     margin-bottom: 1.25rem;

@@ -1,4 +1,4 @@
-%section.fat-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'vancouver.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+%section.fat-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'maple-hotel-street-level.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
   %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
   .container.center-vh
-    %h1.mb-0.text-center {{ page.title }}
+    %h1.mb-0.text-center.wow.fadeInUp {{ page.title }}

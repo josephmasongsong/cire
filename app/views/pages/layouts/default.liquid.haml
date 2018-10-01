@@ -41,9 +41,14 @@ is_layout: false
       {% include footer %}
     {{ 'jquery.min.js' | javascript_tag }}
     %script{:src => "https://unpkg.com/smartphoto@1.1.0/js/jquery-smartphoto.min.js"}
+    {{ 'wow.min.js' | javascript_tag }}
     {{ 'holder.min.js' | javascript_tag }}
     {{ 'popper.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
+    :javascript
+      $(document).ready(function($) {
+        new WOW().init();    
+      });  
     :javascript
       var $hamburger = $(".hamburger");
       $hamburger.on("click", function(e) {
