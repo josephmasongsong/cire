@@ -49,7 +49,7 @@ position: 1
         .overlay-with-gradient.orange
           .row.center-v
             .col-xl-8.col-lg-10.ml-md-auto
-              .px-5.pl-md-0.pr-md-5
+              .px-5.pl-md-0.pr-md-5.wow.fadeIn
                 %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %} Our Mission{% endeditable_text %}
                 %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %}Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work.{% endeditable_text %}
 
@@ -58,11 +58,11 @@ position: 1
 {% endblock %}
 
 {% block 'content/fullwidth' %}
-.row
-  .col-md-11.mx-auto.wow.fadeIn
-    %h3.text-primary.text-center.text-md-left.pt-0.mb-4 {% editable_text "Mission header", format: raw, rows: 1 %} Our Mission {% endeditable_text %}
-    %p.mb-0.lead.text-center.text-md-left {% editable_text "Mission blurb", format: raw, rows: 3 %} Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work. {% endeditable_text %}
-%hr.section-divider
+/ .row
+/   .col-md-11.mx-auto.wow.fadeIn
+/     %h3.text-primary.text-center.text-md-left.pt-0.mb-4 {% editable_text "Mission header", format: raw, rows: 1 %} Our Mission {% endeditable_text %}
+/     %p.mb-0.lead.text-center.text-md-left {% editable_text "Mission blurb", format: raw, rows: 3 %} Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work. {% endeditable_text %}
+/ %hr.section-divider
 
 %h3.text-primary.text-center.mb-3 {% editable_text "Goals header", format: raw, rows: 1 %} Our Goals {% endeditable_text %}
 %p.mb-5.text-center {% editable_text "Goals blurb", format: raw, rows: 3 %} How we achieve our mission {% endeditable_text %}

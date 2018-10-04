@@ -94,3 +94,9 @@ fields:
     required: false
     hint: Tags for categorization
     localized: false
+- link:
+    label: Link
+    type: string
+    hint: link to property listing on spacelist, macdonald realty, mls, etc
+    required: false
+    localized: false

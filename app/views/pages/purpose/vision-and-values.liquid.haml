@@ -14,7 +14,7 @@ position: 3
         .overlay-with-gradient.orange
           .row.center-v
             .col-xl-8.col-lg-10.ml-md-auto
-              .px-5.pl-md-0.pr-md-5
+              .px-5.pl-md-0.pr-md-5.fadeIn.wow
                 %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %}Our Vision{% endeditable_text %}
                 %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %}Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level.{% endeditable_text %}
 
@@ -24,13 +24,13 @@ position: 3
 
 
 {% block content/fullwidth %}
-.row
-  .col-sm-11.mx-auto.wow.fadeIn
+/ .row
+/   .col-sm-11.mx-auto.wow.fadeIn
 
-    %h3.text-primary.text-center.text-md-left.pt-0.mb-4 {% capture page_title %}{% editable_text "Vision header", format: raw, rows: 1 %} Our Vision {% endeditable_text %}{% endcapture %}
-    %p.mb-0.lead.text-center.text-md-left {% editable_text "Vision blurb", format: raw, rows: 3 %} Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level. {% endeditable_text %}
+/     %h3.text-primary.text-center.text-md-left.pt-0.mb-4 {% editable_text "Vision header", format: raw, rows: 1 %} Our Vision {% endeditable_text %}
+/     %p.mb-0.lead.text-center.text-md-left {% editable_text "Vision blurb", format: raw, rows: 3 %} Community Impact Real Estate (CIRE) envisions healthy, empowered communities that value social inclusion, have thriving local serving economies and provide dignity and opportunity to all residents regardless of ability and income level. {% endeditable_text %}
 
-%hr.section-divider
+/ %hr.section-divider
 
         
 %h3.text-primary.mb-4.text-center {% editable_text "Values header", format: raw, rows: 1 %} Our Values {% endeditable_text %}

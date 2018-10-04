@@ -8,6 +8,13 @@ display_settings:
 ---
 {% extends layouts/sidebar %}
 
+{% block og %}
+%meta{:property => "og:title", :content => "For Rent: {{ property.address }}"}/
+%meta{:property => "og:site_name", :content => "Community Impact Real Estate Society"}/
+%meta{:property => "og:url", :content => "{{ page.fullpath }}"}/
+%meta{:property => "og:image", :content => "{{ property.photos.first.file.url }}"}/
+%meta{:property => "og:description", :content => "{{ property.description | strip_html }}"}/
+{% endblock %}
 
 {% block featured_image %}
 %section.bg-secondary.px-3.px-sm-5.slim-header{style: "background: url({{ property.photos.first.file.url }}) center center; background-size: cover;"}

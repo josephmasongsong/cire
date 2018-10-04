@@ -30,7 +30,7 @@ display_settings:
 
 {% block 'content/main' %}
 {% if post.teaser %}
-%h3.teaser-text.text-primary.mb-4 {{ post.teaser }}
+%h3.teaser-text.text-primary.mb-4 {{ post.teaser | strip_html }}
 {% endif %}
 .freetext.mb-4
   {{ post.body }}

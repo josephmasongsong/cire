@@ -26,7 +26,8 @@ position: 2
 .media.py-3.border-bottom
   .media-body
     %h5.text-primary {{ property.address | remove: ", Vancouver, BC" }}
-    %a.mt-3{href: "/properties/{{ property._slug }}", style: "text-decoration: underline;"} Learn More
+    / %a.mt-3{href: "/properties/{{ property._slug }}", style: "text-decoration: underline;"} Learn More
+    %a.mt-3{href: "{{ property.link }}", style: "text-decoration: underline;"} Learn More
 {% endfor %}
 {% include 'pagination' with paginate %}
 {% endpaginate %}

@@ -6,12 +6,12 @@ handle: home
 {% extends 'layouts/default' %}
 
 {% block featured_image %}
-%section.fat-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dibeppe-corner.jpg' | theme_image_url }}{% endif %}) center center; background-size: cover;"}
+%section.fat-header{style: "background: url({% capture image_url %}{% editable_file 'header_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'dibeppe-corner.jpg' | theme_image_url }}{% endif %}) bottom center; background-size: cover;"}
   %div{class: "overlay-with-gradient blue {% if image_url != '' %}transparent{% endif %}"}
   .container.center-vh
     .row
       .col-md-12.mx-auto 
-        %h3.font-weight-light.text-white.text-center.mb-0{style: "line-height: 1.6"}
+        %h3.font-weight-light.text-white.text-center.mb-0.wow.fadeInUp{style: "line-height: 1.6"}
           {% editable_text "subheader", format: raw, rows: 2 %}
           Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social service support and employment opportunities for the residents in the communities within which we work. 
           {% endeditable_text %}
@@ -25,28 +25,41 @@ handle: home
 
     .row
       .col-md-4
-        .feature-column-content.px-3.text-center
+        .feature-column-content.px-3.text-center.wow.fadeIn
           %span.ln.ln-icon-Cloud-Sun.text-secondary.mb-3.d-block
           %h5.mb-3.text-primary {% editable_text "Col 1 Header", format: raw, rows: 1 %}Purpose{% endeditable_text %}
           %p.mb-3  {% editable_text "col 1 blurb", format: raw, rows: 3 %}A commercial lease and property management social enterprise.{% endeditable_text %}
           %a.text-underline{:href => "/purpose"} Read More
       .col-md-4
-        .feature-column-content.px-3.my-4.my-md-0.text-center
+        .feature-column-content.px-3.my-4.my-md-0.text-center.wow.fadeIn
           %span.ln.ln-icon-MaleFemale.text-secondary.mb-3.d-block
           %h5.mb-3.text-primary {% editable_text "Col 3 Header", format: raw, rows: 1 %}People{% endeditable_text %}
           %p.mb-3  {% editable_text "col 3 blurb", format: raw, rows: 3 %}The people steering and working at CIRE are industry professionals.{% endeditable_text %}
           %a.text-underline{:href => "/people"} Read More
       .col-md-4
-        .feature-column-content.px-3.text-center
+        .feature-column-content.px-3.text-center.wow.fadeIn
           %span.ln.ln-icon-Map2.text-secondary.mb-3.d-block
           %h5.mb-3.text-primary {% editable_text "Col 2 Header", format: raw, rows: 1 %}Portfolio{% endeditable_text %}
           %p.mb-3  {% editable_text "col 2 blurb", format: raw, rows: 3 %}CIRE holds a Head Lease with BC Housing on its initial portfolio.{% endeditable_text %}
           %a.text-underline{:href => "/portfolio"} Read More
 
+.container-fluid.px-0
+  .row.no-gutters
+    .col-md-6
+      .callout-text.text-white
+        .overlay-with-gradient.orange
+          .row.center-v
+            .col-xl-8.col-lg-10.ml-md-auto
+              .px-5.pl-md-0.pr-md-5.wow.fadeIn
+                %h4.mb-4 {% editable_text "Callout header", format: raw, rows: 1 %} Our Mission{% endeditable_text %}
+                %p.lead {% editable_text "Callout blurb", format: raw, rows: 3 %}Community Impact Real Estate contributes to the efforts of building an inclusive local economy by using the space in our portfolio to provide affordable goods, services, social support and employment opportunities for residents in the communities within which we work.{% endeditable_text %}
 
-{% comment %}
+    .col-md-6
+      .img-container.w-100{style: "background: url({% capture image_url %}{% editable_file 'column_image' %}{% endeditable_file %}{% endcapture %}{% if image_url != '' %}{{ image_url | image_url }}{% else %}{{ 'map.png' | theme_image_url }}{% endif %}) center center no-repeat; background-size: cover;"}
+
+
 {% include news_list %}
-{% endcomment %}
+
 
 
 {% endblock %}

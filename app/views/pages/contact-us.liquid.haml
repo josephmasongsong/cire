@@ -6,11 +6,6 @@ position: 5
 ---
 {% extends layouts/sidebar %}
 
-
-{% block top_msg %}
-{% include top_callout %}
-{% endblock %}
-
 {% block content/sidebar %}
 .bg-light.p-4.mb-5.mt-5.mt-sm-0
   %h5.mb-3.py-2.text-primary {% editable_text "sidebar header", format: raw, rows: 2 %}Still have questions?{% endeditable_text %}
@@ -22,9 +17,28 @@ position: 5
     %a{href: "/purpose/faq", style: "text-decoration:underline;"} frequently asked questions 
     before contacting CIRE. If you still have questions and are interested in leasing one of our units please contact us.
     {% endeditable_text %}
+
+
 {% endblock %}
 
 {% block content/main %}
+%h5.mb-4.text-primary We can be reached at
+%p
+  {% editable_text "address", format: raw, rows: 2 %}
+  %i.fa.fa-map-marker-alt.mr-2.text-secondary
+  %a{href:"http://maps.google.com/?q=337 Gore Avenue Vancouver, BC V6A 2Z3"} 337 Gore Avenue Vancouver, BC V6A 2Z3
+  {% endeditable_text %}
+%p
+  {% editable_text "phone", format: raw, rows: 2 %}
+  %i.fas.fa-phone.mr-2.text-secondary
+  %a{href:"tel:1-800-123-4567"} 1-800-123-4567
+  {% endeditable_text %}
+%p.mb-5
+  {% editable_text "email", format: raw, rows: 2 %}
+  %i.far.fa-envelope.mr-2.text-secondary
+  %a{href:"mailto:info@communityimpactrealestate.ca"} info@communityimpactrealestate.ca
+  {% endeditable_text %}
+%h5.mb-4.text-primary Or contact us directly
 
 {% if message.errors %}
 .alert.alert-danger.alert-dismissible.fade.show.mb-4
