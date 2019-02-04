@@ -9,13 +9,13 @@ position: 2
 {% block content/sidecontent %}
 .bg-light.p-4.mb-5.mt-5.mt-sm-0
   %h5.mb-4.text-primary {% editable_text "Sidebar subheader", format: raw, rows: 2 %}Interested in one of our units?{% endeditable_text %}
-  %p.mb-0 
+  %p.mb-0
     {% editable_text "Sidebar blurb", format: raw, rows: 4 %}
-    Please refer to the 
-    %a{href: "/portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria 
-    and the 
-    %a{href: "/purpose/faq", style: "text-decoration:underline;"} frequently asked questions 
-    before contacting CIRE. If you still have questions and are interested in leasing one of our units please 
+    Please refer to the
+    %a{href: "/portfolio/selection-criteria", style: "text-decoration:underline;"} tenant selection criteria
+    and the
+    %a{href: "/purpose/faq", style: "text-decoration:underline;"} frequently asked questions
+    before contacting CIRE. If you still have questions and are interested in leasing one of our units please
     %a{href: "/contact-us", style: "text-decoration:underline;"} contact us.
     {% endeditable_text %}
 {% endblock %}
@@ -26,12 +26,12 @@ position: 2
 .media.py-3.border-bottom
   .media-body
     %h5.text-primary {{ property.address | remove: ", Vancouver, BC" }}
-    / %a.mt-3{href: "/properties/{{ property._slug }}", style: "text-decoration: underline;"} Learn More
-    %a.mt-3{href: "{{ property.link }}", style: "text-decoration: underline;"} Learn More
+    {% if property.link and property.link != "" and property.link != nil %}
+    %a.mt-3{href: "{{ property.link }}", style: "text-decoration: underline;", target: "_blank"} Learn More
+    {% else %}
+    %a.mt-3{href: "/properties/{{ property._slug }}", style: "text-decoration: underline;"} Learn More
+    {% endif %}
 {% endfor %}
 {% include 'pagination' with paginate %}
 {% endpaginate %}
 {% endblock %}
-
-
-
